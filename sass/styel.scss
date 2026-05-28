@@ -1,0 +1,77 @@
+@use "sass:math";
+
+
+@mixin inner($mw: 1200px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gnav {
+    padding: 15px 0;
+    margin-top: rem(50);
+
+    &__list {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+    }
+
+    &__item {
+        font-weight: bold;
+
+    }
+}
+
+
+
+.btn {
+    margin-top: rem(30);
+    display: block;
+    width: rem(150);
+    padding: 15px;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: rem(25);
+    margin-left: auto;
+}
+
+.title {
+    margin: 60px 0;
+    font-size: 24px;
+    color: red;
+    text-align: center;
+}
+
+.sub-title {
+    margin: 40px 0;
+    font-size: 18px;
+    color: blue;
+    text-align: center;
+}
+
+.header__inner {
+    @include inner();
+}
+
+.header__style {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__inner {
+    @include inner();
+}
+
+.footer__inner {
+    @include inner();
+}
+
+.footer__text {
+    text-align: center;
+    margin: 60px 0;
+}
