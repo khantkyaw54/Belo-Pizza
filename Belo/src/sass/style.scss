@@ -33,6 +33,8 @@ h3 {
     top: 0;
 
     z-index: 1000;
+    background-color: beige;
+    padding: 20px;
 
 
 
@@ -55,13 +57,14 @@ h3 {
 h1 {
     font-size: 1.5rem;
     color: #E63946;
+    margin: -20px;
 
     span {
-        margin-top: -30px;
+        margin-top: -20px;
         margin-bottom: -30px;
         margin-left: -5px;
         display: block;
-        font-size: 4.5rem;
+        font-size: 3.5rem;
         color: #E63946;
         font-weight: bold;
     }
@@ -69,11 +72,13 @@ h1 {
 
 .main {
     &__inner {
-        @include inner();
+        padding-top: 30px;
 
     }
 
     .hero {
+        @include inner();
+
         &__wrapper {
             position: relative;
         }

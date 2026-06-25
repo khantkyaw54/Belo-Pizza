@@ -25,6 +25,8 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background-color: beige;
+  padding: 20px;
 }
 .header__inner {
   max-width: 1200px;
@@ -44,18 +46,22 @@ h3 {
 h1 {
   font-size: 1.5rem;
   color: #E63946;
+  margin: -20px;
 }
 h1 span {
-  margin-top: -30px;
+  margin-top: -20px;
   margin-bottom: -30px;
   margin-left: -5px;
   display: block;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   color: #E63946;
   font-weight: bold;
 }
 
 .main__inner {
+  padding-top: 30px;
+}
+.main .hero {
   max-width: 1200px;
   width: 90%;
   margin-left: auto;
