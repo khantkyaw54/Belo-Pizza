@@ -1,5 +1,6 @@
 body {
   background-color: #FFFDF6;
+  font-size: 16px;
 }
 
 img {
@@ -16,8 +17,12 @@ h2 {
 }
 
 h3 {
-  font-size: 25px;
-  margin-bottom: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 100%;
+  margin-bottom: 100px;
 }
 
 .header {
@@ -59,7 +64,10 @@ h1 span {
 }
 
 .main__inner {
-  padding-top: 30px;
+  max-width: 1200px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .main .hero {
   max-width: 1200px;
@@ -86,5 +94,91 @@ h1 span {
 .main .concept__img {
   display: block;
   margin-left: auto;
+}
+.main__img {
+  margin: 0 0 40px 0;
+  position: relative;
+}
+.main__text {
+  position: absolute;
+  bottom: 25px;
+  right: 200px;
+}
+
+.mainpizza {
+  margin: 50px 0 260px 0;
+}
+
+@media (min-width: 640px) {
+  .pizza {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 90px;
+         column-gap: 90px;
+    row-gap: 280px;
+  }
+}
+
+.card img {
+  width: 300px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.card .content {
+  margin-top: 15px;
+}
+.card .title {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.card .title h4 {
+  color: #C4391D;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 100%;
+}
+.card .title span {
+  color: #000;
+  font-size: 16px;
+}
+.card .tags {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.card .tags span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 0.5px solid #000;
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+.card p {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.card h5 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+}
+
+.lunchpizza img {
+  width: 500px;
+  height: 400px;
+}
+.lunchpizza .card {
+  display: block;
+  grid-template-columns: 500px 1fr;
+  -moz-column-gap: 110px;
+       column-gap: 110px;
 }
 /*# sourceMappingURL=style.css.map */
