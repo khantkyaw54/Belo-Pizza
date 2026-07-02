@@ -1,13 +1,9 @@
 body {
   background-color: #FFFDF6;
-<<<<<<< HEAD
   font-size: 1rem;
   font-family: "yu-gothic-pr6n", sans-serif;
   line-height: 1.5;
   letter-spacing: 0.05em;
-=======
-  font-size: 16px;
->>>>>>> 74f077a8717ab1bcf17a675353f48af9d7025e2e
 }
 
 img {
@@ -102,40 +98,48 @@ h1 span {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
-.main {
-  padding-top: 20px;
-=======
 .main__inner {
   max-width: 1200px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
->>>>>>> 74f077a8717ab1bcf17a675353f48af9d7025e2e
 }
 .main .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* or your hero height */
+  overflow: hidden;
+}
+.main .hero__inner {
   max-width: 1200px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-}
-.main .hero__wrapper {
   position: relative;
-}
-.main .hero__img {
   width: 100%;
-  aspect-ratio: 16/8;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 100%;
+  overflow: hidden;
+  background: url("../assets/firstview.png") no-repeat center center/cover;
 }
-.main .hero__info {
-  width: 100%;
-  aspect-ratio: 16/7;
-  -o-object-fit: cover;
-     object-fit: cover;
+.main .hero__title {
   position: absolute;
-  top: 40px;
+  top: 60px;
   left: 40px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "helvetica", serif;
+  font-weight: 700;
+  letter-spacing: 10%;
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 4px #ffffff;
+}
+.main .hero__title .hero__title span {
+  display: block;
 }
 
 .concept {
@@ -250,11 +254,11 @@ h1 span {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.main__img {
+.menu__img {
   margin: 0 0 40px 0;
   position: relative;
 }
-.main__text {
+.menu__text {
   position: absolute;
   bottom: 25px;
   right: 200px;

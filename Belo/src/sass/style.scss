@@ -26,14 +26,10 @@ $breakpoints: (
 
 body {
     background-color: #FFFDF6;
-<<<<<<< HEAD
     font-size: rem(16);
     font-family: "yu-gothic-pr6n", sans-serif;
     line-height: 1.5;
     letter-spacing: 0.05em;
-=======
-    font-size: 16px;
->>>>>>> 74f077a8717ab1bcf17a675353f48af9d7025e2e
 }
 
 img {
@@ -139,41 +135,47 @@ h1 {
 }
 
 .main {
-<<<<<<< HEAD
-
-    padding-top: 20px;
-
-
-=======
     &__inner {
         @include inner();
     }
->>>>>>> 74f077a8717ab1bcf17a675353f48af9d7025e2e
 
     .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        /* or your hero height */
+        overflow: hidden;
+    }
+
+    .hero__inner {
         @include inner();
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url("../assets/firstview.png") no-repeat center center/cover;
 
-        &__wrapper {
-            position: relative;
-        }
+    }
 
-        &__img {
-            width: 100%;
-            aspect-ratio: 16/8;
-            object-fit: cover;
-        }
-
-
-
-        &__info {
-            width: 100%;
-            aspect-ratio: 16/7;
-            object-fit: cover;
-            position: absolute;
-            top: 40px;
-            left: 40px;
+    .hero__title {
+        position: absolute;
+        top: 60px;
+        left: 40px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: "helvetica", serif;
+        font-weight: 700;
+        letter-spacing: 10%;
+        font-size: clamp(5rem, 10vw, 9rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 4px #ffffff;
 
 
+        .hero__title span {
+            display: block;
         }
     }
 }
