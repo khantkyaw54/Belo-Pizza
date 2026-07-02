@@ -1,3 +1,11 @@
+@use "sass:math";
+
+$font-size-base: 16px;
+
+@function rem($value) {
+    @return math.div($value * 1px, $font-size-base) * 1rem;
+}
+
 @mixin inner($mw: 1200px, $w: 90%) {
     max-width: $mw;
     width: $w;
@@ -7,6 +15,10 @@
 
 body {
     background-color: #FFFDF6;
+    font-size: rem(16);
+    font-family: "yu-gothic-pr6n", sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
 }
 
 img {
@@ -17,7 +29,7 @@ img {
 
 h2 {
     font-weight: bold;
-    font-size: 48px;
+    font-size: rem(48);
     color: #C4391D;
     margin: 50px 0 30px 0;
 }
@@ -33,8 +45,20 @@ h3 {
     top: 0;
 
     z-index: 1000;
-    background-color: beige;
-    padding: 20px;
+
+    padding: rem(20);
+
+    transition: background-color .3s ease, box-shadow .3s ease;
+
+    &.scrolled {
+
+        background-color: rgba(190, 190, 190, 0.5);
+
+        backdrop-filter: blur(10px);
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    }
 
 
 
@@ -50,12 +74,37 @@ h3 {
         &__list {
             display: flex;
             gap: 20px;
+
+
+        }
+
+        &__item {
+            font-size: rem(16);
+            font-weight: bold;
+
+            &:hover {
+                color: #E63946;
+                scale: 1.1;
+                animation: rotate .3s ease;
+
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+
+            }
         }
     }
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: rem(24);
     color: #E63946;
     margin: -20px;
 
@@ -71,10 +120,10 @@ h1 {
 }
 
 .main {
-    &__inner {
-        padding-top: 30px;
 
-    }
+    padding-top: 20px;
+
+
 
     .hero {
         @include inner();
@@ -83,27 +132,169 @@ h1 {
             position: relative;
         }
 
+        &__img {
+            width: 100%;
+            aspect-ratio: 16/8;
+            object-fit: cover;
+        }
+
 
 
         &__info {
+            width: 100%;
+            aspect-ratio: 16/7;
+            object-fit: cover;
             position: absolute;
-            top: 60px;
+            top: 40px;
             left: 40px;
 
-            &__tongue {
-                position: absolute;
-                top: 250px;
-                left: 240px;
-            }
+
+        }
+    }
+}
+
+.concept {
+    margin-bottom: rem(100);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+
+        font-family: "Bodoni 72", serif;
+        font-size: clamp(3rem, 12vw, 10rem);
+        letter-spacing: -0.04em;
+        white-space: nowrap;
+
+
+        margin-bottom: rem(90);
+    }
+
+    &__info {
+        margin-bottom: rem(100);
+
+        &__title {
+            font-size: rem(30);
+            font-weight: bold;
+            margin-bottom: rem(30);
         }
     }
 
-    .concept {
-        margin: 50px 0 250px 0;
+    img {
+        height: rem(500);
+        width: 100%;
+        object-fit: cover;
+    }
 
-        &__img {
+
+
+
+}
+
+.menu {
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        font-size: rem(70);
+        font-weight: bold;
+        letter-spacing: 0;
+        color: #000;
+
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        column-gap: 5rem;
+
+
+    }
+
+    &__info {
+        max-width: 300px;
+
+        &__title {
+            font-size: rem(25);
+            font-weight: bold;
+            margin: 20px 0;
+            color: #C4391D;
+        }
+
+        &__subtitle {
+            margin: rem(20) 0;
+            font-size: rem(16);
+            font-weight: bold;
+        }
+
+
+        img {
             display: block;
-            margin-left: auto;
+            width: 100%;
+            aspect-ratio: 9/14;
+            object-fit: cover;
+            border-radius: 40px;
+
+        }
+
+        &__margherita {
+            transform: translateY(-10px) scale(0.75) rotate(-5deg);
+            margin-top: 60px;
+
+            &:hover {
+                transform: none;
+                margin-top: 0;
+            }
+        }
+
+
+        &__veggie {
+            transform: translateY(-10px) scale(0.75) rotate(5deg);
+            margin-top: -40px;
+
+            &:hover {
+                transform: none;
+                margin-top: 0;
+            }
+        }
+
+        &__side {
+            transform:
+                translateY(40px);
+        }
+
+        &__drink {
+            transform:
+                translateY(80px);
+        }
+    }
+
+    &__category {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+
+    }
+
+    &__info2 {
+        margin-top: 60px;
+
+        h3,
+        h4,
+        p {
+            max-width: 280px;
+        }
+
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3/5;
+            object-fit: cover;
+
         }
     }
 }

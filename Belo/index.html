@@ -22,8 +22,7 @@
         <div class="hero__wrapper">
           <img src="./public/assets/firstview.png" alt="" class="hero__img">
           <div class="hero__info">
-            <img src="./public/assets/My Pizza Make You Smile.png" alt="" class="">
-            <img src="./public/assets/tongue.png" alt="" class="hero__info__tongue">
+            <img src="./public/assets/My Pizza Make You Smile.png" alt="hero__text" class="hero__text">
           </div>
         </div>
       </div>
@@ -43,32 +42,97 @@
           </nav>
         </div>
       </header>
+
+      <!-- /* concept */ -->
       <section class="concept concept__inner">
-        <img class="concept__img" src="./public/assets/concept.png" alt="">
-        <h2>Vera pizza italiana.</h2>
-        <h3>本場イタリアの薪窯で焼く本格ピッツァ</h3>
-        <p class="concept__text">イタリアから取り寄せた薪窯で、一枚一枚丁寧に焼き上げる本格ピッツァ。
-          高温の炎が生み出す香ばしさと、もちもちの生地。
-          本場の味わいを気軽に楽しんでいただけます。</p>
+        <h2 class="concept__title">Vera pizza italiana.</h2>
+        <div class="concept__info">
+          <h3 class="concept__info__title">本場イタリアの薪窯で焼く本格ピッツァ</h3>
+          <p>イタリアから取り寄せた薪窯で、<br>
+            一枚一枚丁寧に焼き上げる本格ピッツァ。<br>
+            高温の炎が生み出す香ばしさと、もちもちの生地。<br>
+            本場の味わいを気軽に楽しんでいただけます。</p>
+        </div>
+        <img src="./public/assets/concept01.png" alt="concept-image">
+
       </section>
-      <section class="concept">
-        <img class="concept__img" src="./public/assets/concept.png" alt="">
-        <h2>Vera pizza italiana.</h2>
-        <h3>本場イタリアの薪窯で焼く本格ピッツァ</h3>
-        <p class="concept__text">イタリアから取り寄せた薪窯で、一枚一枚丁寧に焼き上げる本格ピッツァ。
-          高温の炎が生み出す香ばしさと、もちもちの生地。
-          本場の味わいを気軽に楽しんでいただけます。</p>
-      </section>
-      <section class="concept">
-        <img class="concept__img" src="./public/assets/concept.png" alt="">
-        <h2>Vera pizza italiana.</h2>
-        <h3>本場イタリアの薪窯で焼く本格ピッツァ</h3>
-        <p class="concept__text">イタリアから取り寄せた薪窯で、一枚一枚丁寧に焼き上げる本格ピッツァ。
-          高温の炎が生み出す香ばしさと、もちもちの生地。
-          本場の味わいを気軽に楽しんでいただけます。</p>
-      </section>
+
+      <!-- /* menu */ -->
+      <section class="menu menu__inner">
+        <h2 class="menu__title">Menu</h2>
+        <div class="menu__wrapper">
+          <div class="menu__list">
+            <div class="menu__info menu__info__margherita">
+              <img src="./public/assets/margherita.jpg" alt="menu01">
+              <h3 class="menu__info__title">
+                Margherita
+              </h3>
+              <p>
+                Mozzarella、トマト、ベーコン、ペーパー
+              </p>
+            </div>
+            <div class="menu__info menu__info__pepperoni">
+              <img src="./public/assets/pepperoni.jpg" alt="menu02">
+              <h3 class="menu__info__title">
+                Pepperoni
+              </h3>
+              <p>
+                マッシュルーム、ペーパー、ベーコン
+              </p>
+            </div>
+            <div class="menu__info menu__info__veggie">
+              <img src="./public/assets/veggie.jpg" alt="menu03">
+              <h3 class="menu__info__title">
+                Veggie
+              </h3>
+              <p>
+                マッシュルーム、ペーパー、ベーコン
+              </p>
+            </div>
+          </div>
+          <div class="menu__category">
+            <div class="menu__info2 menu__info__pizza">
+              <img src="./public/assets/pizza-menu.jpg" alt="pizza">
+              <h3 class="menu__info__title">
+                Pizza
+              </h3>
+              <h4 class="menu__info__subtitle">ピザメニュー</h4>
+              <p>薪窯で一枚ずつ丁寧に焼き上げる、
+                本場ナポリスタイルのピッツァ。
+                香ばしい生地と厳選素材の味をお楽しみください。</p>
+            </div>
+            <div class="menu__info2 menu__info__side">
+              <img src="./public/assets/side-menu.jpg" alt="side">
+              <h3 class="menu__info__title">
+                Side
+              </h3>
+              <h4 class="menu__info__subtitle">サイドメニュー</h4>
+              <p>ピッツァと相性抜群の前菜やサラダをご用意。
+                食卓を彩る一品をお楽しみください。</p>
+            </div>
+            <div class="menu__info2 menu__info__drink">
+              <img src="./public/assets/drink-menu.jpg" alt="drink">
+              <h3 class="menu__info__title">
+                Drink
+              </h3>
+              <h4 class="menu__info__subtitle">ドリンクメニュー</h4>
+              <p>お料理に合わせて選べるドリンクをご用意。
+                ソフトドリンクからこだわりのワインまで
+                幅広く取り揃えています。</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    </section>
+
+
+
     </div>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
   <script type="module" src="/src/main.js"></script>
 </body>
 
