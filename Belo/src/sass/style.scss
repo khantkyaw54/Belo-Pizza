@@ -5,8 +5,20 @@
     margin-right: auto;
 }
 
+$breakpoints: (
+    phone: 480px,
+    desktop: 640px
+);
+
+@mixin mq($breakpoint: desktop) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+    }
+}
+
 body {
     background-color: #FFFDF6;
+    font-size: 16px;
 }
 
 img {
@@ -23,8 +35,12 @@ h2 {
 }
 
 h3 {
-    font-size: 25px;
-    margin-bottom: 30px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 100%;
+    margin-bottom: 100px;
 }
 
 .header {
@@ -72,8 +88,7 @@ h1 {
 
 .main {
     &__inner {
-        padding-top: 30px;
-
+        @include inner();
     }
 
     .hero {
@@ -105,5 +120,105 @@ h1 {
             display: block;
             margin-left: auto;
         }
+    }
+
+    &__img {
+        margin: 0 0 40px 0;
+        position: relative;
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 25px;
+        right: 200px;
+    }
+}
+
+.mainpizza {
+    margin: 50px 0 260px 0;
+}
+
+.pizza {
+    @include mq(desktop) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 90px;
+        row-gap: 280px;
+    }
+}
+
+.card {
+    img {
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .content {
+        margin-top: 15px;
+    }
+
+    .title {
+        display: flex;
+        align-items: flex-end;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        h4 {
+            color: #C4391D;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 100%;
+        }
+
+        span {
+            color: #000;
+            font-size: 16px;
+        }
+
+    }
+
+    .tags {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 0.5px solid #000;
+            border-radius: 30px;
+            padding: 5px 10px;
+            font-weight: 400;
+        }
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+
+    h5 {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 100%;
+    }
+
+}
+
+.lunchpizza {
+    img {
+        width: 500px;
+        height: 400px;
+    }
+
+    .card {
+        display: block;
+        grid-template-columns: 500px 1fr;
+        column-gap: 110px;
     }
 }
