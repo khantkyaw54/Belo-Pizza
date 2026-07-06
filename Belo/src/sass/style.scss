@@ -38,6 +38,22 @@ img {
     max-width: 100%;
 }
 
+h1 {
+    font-size: 1.5rem;
+    color: #E63946;
+    margin: -20px;
+
+    span {
+        margin-top: -20px;
+        margin-bottom: -30px;
+        margin-left: -5px;
+        display: block;
+        font-size: 3.5rem;
+        color: #E63946;
+        font-weight: bold;
+    }
+}
+
 h2 {
     font-weight: bold;
     font-size: rem(48);
@@ -52,6 +68,20 @@ h3 {
     font-style: italic;
     line-height: 100%;
     margin-bottom: 100px;
+}
+
+h4 {
+    color: #C4391D;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+h5 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 100%;
 }
 
 .header {
@@ -115,22 +145,6 @@ h3 {
 
             }
         }
-    }
-}
-
-h1 {
-    font-size: rem(24);
-    color: #E63946;
-    margin: -20px;
-
-    span {
-        margin-top: -20px;
-        margin-bottom: -30px;
-        margin-left: -5px;
-        display: block;
-        font-size: 3.5rem;
-        color: #E63946;
-        font-weight: bold;
     }
 }
 
@@ -368,12 +382,6 @@ h1 {
         gap: 15px;
         margin-bottom: 20px;
 
-        h4 {
-            color: #C4391D;
-            font-size: 30px;
-            font-weight: 400;
-            line-height: 100%;
-        }
 
         span {
             color: #000;
@@ -404,14 +412,13 @@ h1 {
         font-weight: 400;
     }
 
-    h5 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-weight: bold;
+    .price {
         font-size: 25px;
-        line-height: 100%;
+        font-weight: bold;
     }
 
 }
+
 
 .lunchpizza {
     img {
@@ -420,8 +427,41 @@ h1 {
     }
 
     .card {
-        display: block;
-        grid-template-columns: 500px 1fr;
-        column-gap: 110px;
+        margin-bottom: 200px;
+
+        @include mq(desktop) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 110px;
+            align-items: center;
+        }
     }
+}
+
+.drink {
+    .post {
+        @include mq(desktop) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 100px;
+            row-gap: 100px;
+        }
+    }
+
+    h4 {
+        color: #000;
+        margin-bottom: 50px;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 25px 0;
+    }
+
+    .whitewine {
+        h4 {
+            margin: 150px 0 50px 0;
+        }
+    }
+
 }
