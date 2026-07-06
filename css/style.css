@@ -1,5 +1,5 @@
 body {
-  background-color: #FFFDF6;
+  background-color: #F5F5F5;
   font-size: 1rem;
   font-family: "yu-gothic-pr6n", sans-serif;
   line-height: 1.5;
@@ -105,41 +105,40 @@ h1 span {
   margin-right: auto;
 }
 .main .hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  /* or your hero height */
-  overflow: hidden;
+  margin-top: 40px;
 }
 .main .hero__inner {
   max-width: 1200px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   background: url("../assets/firstview.png") no-repeat center center/cover;
 }
 .main .hero__title {
-  position: absolute;
-  top: 60px;
-  left: 40px;
+  padding: 3.125rem 0 3.125rem 3.125rem;
+  position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-family: "helvetica", serif;
-  font-weight: 700;
-  letter-spacing: 10%;
-  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 6.25rem;
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 4px #ffffff;
 }
-.main .hero__title .hero__title span {
+.main .hero__title span {
   display: block;
+}
+
+.tongue {
+  position: absolute;
+  width: 17.5rem;
+  left: 18rem;
+  bottom: 10.0625rem;
+  transform: translateX(-20%);
 }
 
 .concept {

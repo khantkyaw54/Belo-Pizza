@@ -12,16 +12,27 @@ window.addEventListener("scroll", () => {
     }
 });
 
-gsap.from(".hero__info", {
-    scrollTrigger: {
-        trigger: ".hero__info",
-        start: "top bottom",
-    },
-    y: 200,
-    opacity: 0,
-    duration: 1,
-    ease: "elastic.out(1)",
-    repeat: 1,
-    scale: 1.5,
+// hero title animation
+const tl = gsap.timeline();
 
-});
+tl.from("header,.hero__inner", {
+    opacity: 0,
+    duration: .8,
+    delay: 0.2
+})
+    .from(".hero__title span", {
+        opacity: 0,
+        y: 100,
+        rotation: -15,
+        scale: 0.4,
+        duration: 1,
+        ease: "back.out(2)",
+        stagger: 0.12,
+    })
+    .from(".tongue", {
+        opacity: 0,
+        scale: 0,
+        rotate: -30,
+        duration: 0.8,
+        ease: "elastic.out(1, 0.4)"
+    }, "-=0.3");
