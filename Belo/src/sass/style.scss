@@ -127,14 +127,6 @@ h5 {
         }
     }
 
-    .concept {
-        margin: 50px 0 250px 0;
-
-        &__img {
-            display: block;
-            margin-left: auto;
-        }
-    }
 
     &__img {
         margin: 0 0 40px 0;
@@ -145,6 +137,15 @@ h5 {
         position: absolute;
         bottom: 25px;
         right: 200px;
+    }
+}
+
+.concept {
+    margin: 50px 0 250px 0;
+
+    &__img {
+        display: block;
+        margin-left: auto;
     }
 }
 

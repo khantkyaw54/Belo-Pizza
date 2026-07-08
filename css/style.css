@@ -102,13 +102,6 @@ h5 {
   top: 250px;
   left: 240px;
 }
-.main .concept {
-  margin: 50px 0 250px 0;
-}
-.main .concept__img {
-  display: block;
-  margin-left: auto;
-}
 .main__img {
   margin: 0 0 40px 0;
   position: relative;
@@ -117,6 +110,14 @@ h5 {
   position: absolute;
   bottom: 25px;
   right: 200px;
+}
+
+.concept {
+  margin: 50px 0 250px 0;
+}
+.concept__img {
+  display: block;
+  margin-left: auto;
 }
 
 .mainpizza {
