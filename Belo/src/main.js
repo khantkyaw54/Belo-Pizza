@@ -5,7 +5,9 @@ const header = document.querySelector(".header");
 const hero = document.querySelector(".hero");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > hero.offsetHeight - header.offsetHeight) {
+    const trigger = hero.offsetHeight;
+
+    if (window.scrollY >= trigger) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
