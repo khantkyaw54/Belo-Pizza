@@ -1,70 +1,44 @@
-import './sass/style.scss';
+import "./sass/style.scss";
+import gsap from "gsap";
+import Swiper from "swiper";
+import "swiper/css";
 
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.nav');
+const header = document.querySelector(".header");
+const hero = document.querySelector(".hero");
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  menu.classList.toggle('active');
+window.addEventListener("scroll", () => {
+    const trigger = hero.offsetHeight;
+
+    if (window.scrollY >= trigger) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
 });
 
+// hero title animation
+const tl = gsap.timeline();
 
-const images = document.querySelectorAll(".hero__image img");
+tl.from("header,.hero__inner", {
+    opacity: 0,
+    duration: .8,
+    delay: 0.2
+})
+    .from(".hero__title span", {
+        opacity: 0,
+        y: 100,
+        rotation: -15,
+        scale: 0.4,
+        duration: 1,
+        ease: "back.out(2)",
+        stagger: 0.12,
+    })
+    .from(".tongue", {
+        opacity: 0,
+        scale: 0,
+        rotate: -30,
+        duration: 0.8,
+        ease: "elastic.out(1, 0.4)"
+    }, "-=0.3");
 
-let current = 0;
-
-setInterval(() => {
-  images[current].classList.remove("active");
-
-  current = (current + 1) % images.length;
-
-  images[current].classList.add("active");
-}, 2000); // change every 2 seconds
-
-const image = document.getElementById("menuImage");
-const subtitles = document.querySelectorAll(".menu__subtitle");
-
-let currentIndex = 0;
-let autoSlide;
-
-function showItem(index) {
-  subtitles.forEach(sub => sub.classList.remove("active"));
-
-  subtitles[index].classList.add("active");
-
-  image.style.opacity = 0;
-
-  setTimeout(() => {
-    image.src = subtitles[index].dataset.image;
-    image.style.opacity = 1;
-  }, 300);
-
-  currentIndex = index;
-}
-
-function startAutoSlide() {
-  autoSlide = setInterval(() => {
-    const next = (currentIndex + 1) % subtitles.length;
-    showItem(next);
-  }, 3000);
-}
-
-function stopAutoSlide() {
-  clearInterval(autoSlide);
-}
-
-// Hover
-subtitles.forEach((subtitle, index) => {
-
-  subtitle.addEventListener("mouseenter", () => {
-    stopAutoSlide();      // stop auto changing
-    showItem(index);      // show hovered pizza
-  });
-
-  subtitle.addEventListener("mouseleave", () => {
-    startAutoSlide();     // resume auto changing
-  });
-
-});
-
-startAutoSlide();
+//slider

@@ -1,0 +1,510 @@
+@charset "UTF-8";
+@import url("https://googleapis.com");
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+.header.scrolled {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(30px) saturate(220%);
+  -webkit-backdrop-filter: blur(30px) saturate(220%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.7), inset 0 -1px 1px rgba(255, 255, 255, 0.15);
+}
+
+body {
+  font-family: "Bodoni 72", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  color: #000000;
+  background-color: #F5F5F5;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media (width >= 480px) {
+  body {
+    font-size: 0.875rem;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+img {
+  vertical-align: bottom;
+  height: auto;
+  max-width: 100%;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.25rem 0;
+}
+.header__title {
+  font-size: 2.8125rem;
+  font-weight: bold;
+  color: #E63946;
+}
+.header.scrolled {
+  background-color: rgba(190, 190, 190, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+.header__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav__list {
+  display: flex;
+  gap: 20px;
+}
+.header .nav__item {
+  font-size: 1rem;
+  font-weight: bold;
+  display: none;
+}
+@media (width >= 740px) {
+  .header .nav__item {
+    display: block;
+  }
+}
+.header .nav__item:hover {
+  color: #E63946;
+  scale: 1.1;
+}
+
+.main__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .hero {
+  margin-top: 40px;
+}
+.main .hero__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("../assets/firstview.png") no-repeat center center/cover;
+}
+.main .hero__title {
+  padding: 17.1875rem 0 1.875rem 1.25rem;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "helvetica", serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 4.375rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 3px #ffffff;
+}
+@media (width >= 740px) {
+  .main .hero__title {
+    padding-top: 3.125rem;
+    padding-left: 3.125rem;
+  }
+}
+@media (width >= 740px) {
+  .main .hero__title {
+    font-size: 6.25rem;
+    -webkit-text-stroke: 4px #ffffff;
+  }
+}
+.main .hero__title span {
+  display: block;
+}
+
+.tongue {
+  position: absolute;
+  width: 12.5rem;
+  left: 11.875rem;
+  bottom: 6.5625rem;
+  transform: translateX(-20%);
+}
+@media (width >= 740px) {
+  .tongue {
+    width: 17.5rem;
+    left: 17.8125rem;
+    bottom: 8.75rem;
+  }
+}
+
+.concept {
+  margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
+}
+.concept__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.concept__title {
+  margin-bottom: 1.875rem;
+  font-size: 1.5625rem;
+  font-weight: bold;
+}
+.concept__title::before {
+  content: "Vera pizza italiana.";
+  display: block;
+  color: #E63946;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 0;
+  margin-right: auto;
+  padding-bottom: -0.625rem;
+  font-size: 1.25rem;
+  font-weight: 10;
+  font-family: "Bonheur Royale", cursive;
+  transform: rotate(-5deg);
+}
+@media (width >= 740px) {
+  .concept__title::before {
+    font-size: 1rem;
+  }
+}
+.concept__info {
+  margin-bottom: 6.25rem;
+}
+.concept__info__title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+}
+.concept p {
+  margin-bottom: 1.875rem;
+}
+.concept__img {
+  position: relative;
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+.concept__img__01 {
+  display: block;
+  width: 15.625rem;
+  height: 11.25rem;
+  margin-left: auto;
+  margin-top: -1.875rem;
+  z-index: 9;
+}
+@media (width >= 740px) {
+  .concept__img__01 {
+    width: 100%;
+    height: auto;
+  }
+}
+.concept__img__02 {
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  top: 7.5rem;
+  left: 2.5rem;
+  z-index: 10;
+}
+@media (width >= 740px) {
+  .concept__img__02 {
+    display: none;
+  }
+}
+
+.menu__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu__title {
+  margin-bottom: 1.875rem;
+  font-size: 1.5625rem;
+  font-weight: bold;
+  text-align: center;
+}
+.menu__title::before {
+  content: "Menu";
+  display: block;
+  color: #E63946;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: -0.625rem;
+  font-size: 1.25rem;
+  font-weight: 10;
+  font-family: "Bonheur Royale", cursive;
+  transform: rotate(-5deg);
+}
+@media (width >= 740px) {
+  .menu__title::before {
+    font-size: 1rem;
+  }
+}
+.menu__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (width >= 740px) {
+  .menu__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+.menu__card__item__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1.5625rem 0;
+}
+.menu__card__item .drink-menu {
+  margin-top: 6.25rem;
+}
+.menu__card__item .side-menu {
+  margin-top: 3.125rem;
+}
+.menu__card__item p {
+  max-width: 20rem;
+  margin-bottom: 0.625rem;
+}
+.menu__card__item img {
+  width: 100%;
+  max-width: 13.75rem;
+  aspect-ratio: 11/15;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (width >= 740px) {
+  .menu__card__item img {
+    max-width: 25rem;
+  }
+}
+.menu__card__item span {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+.menu__card__item .line {
+  display: block;
+  width: 15.625rem;
+  border: 0.05rem solid #808080;
+  margin: 0.625rem 0;
+}
+.menu__card__item .line__reverse {
+  margin-left: auto;
+}
+@media (width >= 740px) {
+  .menu__card__item .line__reverse {
+    margin-left: 0;
+  }
+}
+.menu__card__item.reverse {
+  margin-left: auto;
+  text-align: right;
+  width: 100%;
+}
+@media (width >= 740px) {
+  .menu__card__item.reverse {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+.instagram {
+  margin-top: 6.25rem;
+}
+.instagram a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  padding-bottom: 2.5rem;
+}
+.instagram a::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("/assets/instagram.png") no-repeat center/cover;
+}
+.instagram__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.instagram__title {
+  margin-bottom: 1.875rem;
+  font-size: 1.5625rem;
+  font-weight: bold;
+  text-align: center;
+}
+.instagram__title::before {
+  content: "Instagram";
+  display: block;
+  color: #E63946;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: -0.625rem;
+  font-size: 1.25rem;
+  font-weight: 10;
+  font-family: "Bonheur Royale", cursive;
+  transform: rotate(-5deg);
+}
+@media (width >= 740px) {
+  .instagram__title::before {
+    font-size: 1rem;
+  }
+}
+.instagram__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+@media (width >= 740px) {
+  .instagram__card {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.instagram__card__item img {
+  width: 100%;
+  max-width: 10rem;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.instagram__card__item__title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.625rem 0;
+}
+
+.information {
+  margin-top: 6.25rem;
+}
+.information__title {
+  font-size: 2.5rem;
+}
+@media (width >= 740px) {
+  .information__title {
+    font-size: 7.5rem;
+  }
+}
+.information__title::after {
+  content: "おいしいで、つながる。";
+  display: block;
+  font-size: 1.375rem;
+  margin-bottom: 3.75rem;
+}
+@media (width >= 740px) {
+  .information__title::after {
+    font-size: 3.125rem;
+  }
+}
+.information__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.information__card {
+  display: grid;
+  gap: 50px;
+}
+@media (width >= 740px) {
+  .information__card {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+}
+.information__card__item__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+  color: #E63946;
+}
+.information__card__item__title span {
+  font-size: 1.875rem;
+}
+.information__card__item .map {
+  display: block;
+  padding: 0.625rem;
+  border: 1px solid #000;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1.25rem 0;
+}
+.information__card__item .insta-tag {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.25rem 0;
+}
+.information__card__item .insta-tag::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("/assets/instagram.png") no-repeat center/cover;
+}
+.information__address p {
+  margin: 0.625rem 0;
+}
+.information__description {
+  display: grid;
+  gap: 1.25rem;
+}
+@media (width >= 740px) {
+  .information__description {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.information__desc__title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.625rem 0;
+}
+.information__desc p {
+  margin: 0.625rem 0;
+}
+
+.footer {
+  margin-top: 6.25rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid #808080;
+}
+.footer__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer small {
+  display: block;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
