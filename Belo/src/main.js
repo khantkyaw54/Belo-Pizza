@@ -1,5 +1,7 @@
 import "./sass/style.scss";
 import gsap from "gsap";
+import Swiper from "swiper";
+import "swiper/css";
 
 const header = document.querySelector(".header");
 const hero = document.querySelector(".hero");
@@ -38,3 +40,5 @@ tl.from("header,.hero__inner", {
         duration: 0.8,
         ease: "elastic.out(1, 0.4)"
     }, "-=0.3");
+
+//slider
