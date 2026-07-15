@@ -1,351 +1,351 @@
-// @use "sass:math";
-// @import url('https://googleapis.com');
-
-// $font-size-base: 16px;
-
-// @function rem($value) {
-//     @return math.div($value * 1px, $font-size-base) * 1rem;
-// }
-
-// @mixin inner($mw: 1200px, $w: 90%) {
-//     max-width: $mw;
-//     width: $w;
-//     margin-left: auto;
-//     margin-right: auto;
-// }
-
-// @mixin title-main($t) {
-//     margin-bottom: rem(30);
-//     font-size: rem(25);
-//     font-weight: bold;
-
-//     &::before {
-//         content: $t;
-//         display: block;
-//         color: #E63946;
-//         padding-bottom: rem(-10);
-//         font-size: rem(20);
-//         font-weight: 10;
-//         font-family: 'Bonheur Royale', cursive;
-//         transform: rotate(-5deg);
-
-//         @include mq("desktop") {
-//             font-size: rem(16);
-
-//         }
-
-
-//     }
-// }
-
-// $breakpoints: (
-//     "sp": 320px,
-//     "tablet": 480px,
-//     "desktop": 740px
-// );
-
-// @mixin mq($breakpoint: desktop) {
-//     @media (width >=map-get($breakpoints, $breakpoint)) {
-//         @content;
-//     }
-// }
-
-// //header
-// .header {
-//     position: sticky;
-//     top: 0;
-//     z-index: 1000;
-
-//     background: transparent;
-//     transition: all .5s ease;
-
-//     &.scrolled {
-//         background:
-//             linear-gradient(180deg,
-//                 rgba(255, 255, 255, .35),
-//                 rgba(255, 255, 255, .12));
-
-//         backdrop-filter: blur(30px) saturate(220%);
-//         -webkit-backdrop-filter: blur(30px) saturate(220%);
-
-//         border-bottom: 1px solid rgba(255, 255, 255, .25);
-
-//         box-shadow:
-//             0 10px 40px rgba(0, 0, 0, .12),
-//             inset 0 1px 1px rgba(255, 255, 255, .7),
-//             inset 0 -1px 1px rgba(255, 255, 255, .15);
-//     }
-// }
-
-// .header {
-//     overflow: hidden;
-//     position: sticky;
-
-//     &::before {
-//         content: "";
-//         position: absolute;
-//         inset: 0;
-//         pointer-events: none;
-
-//         background:
-//             linear-gradient(to bottom,
-//                 rgba(255, 255, 255, .55),
-//                 rgba(255, 255, 255, .08) 45%,
-//                 transparent);
-//     }
-
-//     &::after {
-//         content: "";
-//         position: absolute;
-
-//         width: 280px;
-//         height: 280px;
-
-//         top: -180px;
-//         left: -120px;
-
-//         border-radius: 50%;
-
-//         background:
-//             radial-gradient(circle,
-//                 rgba(255, 255, 255, .6),
-//                 transparent 70%);
-
-//         filter: blur(35px);
-
-//         pointer-events: none;
-//     }
-// }
-
-// body {
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: rem(12);
-//     color: #000000;
-//     background-color: #F5F5F5;
-//     line-height: 1.5;
-//     letter-spacing: 0.05em;
+@use "sass:math";
+@import url('https://googleapis.com');
+
+$font-size-base: 16px;
+
+@function rem($value) {
+    @return math.div($value * 1px, $font-size-base) * 1rem;
+}
+
+@mixin inner($mw: 1200px, $w: 90%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin title-main($t) {
+    margin-bottom: rem(30);
+    font-size: rem(25);
+    font-weight: bold;
+
+    &::before {
+        content: $t;
+        display: block;
+        color: #E63946;
+        padding-bottom: rem(-10);
+        font-size: rem(20);
+        font-weight: 10;
+        font-family: 'Bonheur Royale', cursive;
+        transform: rotate(-5deg);
+
+        @include mq("desktop") {
+            font-size: rem(16);
+
+        }
+
+
+    }
+}
+
+$breakpoints: (
+    "sp": 320px,
+    "tablet": 480px,
+    "desktop": 740px
+);
+
+@mixin mq($breakpoint: desktop) {
+    @media (width >=map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+//header
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: transparent;
+    transition: all .5s ease;
+
+    &.scrolled {
+        background:
+            linear-gradient(180deg,
+                rgba(255, 255, 255, .35),
+                rgba(255, 255, 255, .12));
+
+        backdrop-filter: blur(30px) saturate(220%);
+        -webkit-backdrop-filter: blur(30px) saturate(220%);
+
+        border-bottom: 1px solid rgba(255, 255, 255, .25);
+
+        box-shadow:
+            0 10px 40px rgba(0, 0, 0, .12),
+            inset 0 1px 1px rgba(255, 255, 255, .7),
+            inset 0 -1px 1px rgba(255, 255, 255, .15);
+    }
+}
+
+.header {
+    overflow: hidden;
+    position: sticky;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        background:
+            linear-gradient(to bottom,
+                rgba(255, 255, 255, .55),
+                rgba(255, 255, 255, .08) 45%,
+                transparent);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+
+        width: 280px;
+        height: 280px;
+
+        top: -180px;
+        left: -120px;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(circle,
+                rgba(255, 255, 255, .6),
+                transparent 70%);
+
+        filter: blur(35px);
+
+        pointer-events: none;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: rem(12);
+    color: #000000;
+    background-color: #F5F5F5;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
 
-//     @include mq("tablet") {
-//         font-size: rem(14);
-//     }
-// }
+    @include mq("tablet") {
+        font-size: rem(14);
+    }
+}
 
-// img {
-//     vertical-align: bottom;
-//     height: auto;
-//     max-width: 100%;
-// }
-
-// h1 {
-//     font-size: 1.5rem;
-//     color: #E63946;
-//     margin: -20px;
-
-//     span {
-//         margin-top: -20px;
-//         margin-bottom: -30px;
-//         margin-left: -5px;
-//         display: block;
-//         font-size: 3.5rem;
-//         color: #E63946;
-//         font-weight: bold;
-//     }
-// }
-
-
-
-// //HEADER
-
-// .header {
-//     position: sticky;
-//     top: 0;
-//     z-index: 1000;
-//     padding: rem(20);
-//     transition: background-color .3s ease, box-shadow .3s ease;
-
-//     &.scrolled {
-//         background-color: rgba(190, 190, 190, 0.5);
-//         backdrop-filter: blur(10px);
-//         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-//     }
-
-//     &__inner {
-//         @include inner();
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         margin: 20px auto;
-//     }
-
-//     .nav {
-
-
-
-//         &__list {
-//             display: flex;
-//             gap: 20px;
-//         }
-
-//         &__item {
-//             font-size: rem(16);
-//             font-weight: bold;
-//             display: none;
-
-//             @include mq(desktop) {
-//                 display: block;
-//             }
-
-
-//             &:hover {
-//                 color: #E63946;
-//                 scale: 1.1;
-//             }
-//         }
-//     }
-// }
-
-// //MAIN
-// .main {
-//     &__inner {
-//         @include inner();
-//     }
-
-//     .hero {
-
-//         margin-top: 40px;
-
-//         &__inner {
-//             @include inner();
-//             background: url("../assets/firstview.png") no-repeat center center/cover;
-//         }
-
-
-
-//         &__title {
-//             padding: rem(275) 0 rem(30) rem(20);
-
-//             @include mq(desktop) {
-//                 padding-top: rem(50);
-//                 padding-left: rem(50);
-//             }
-
-//             position: relative;
-//             z-index: 10;
-//             display: flex;
-//             flex-direction: column;
-//             align-items: flex-start;
-//             font-family: "helvetica",
-//             serif;
-//             font-weight: 800;
-//             letter-spacing: 0.05em;
-//             font-size: rem(70);
-//             line-height: 1;
-//             color: transparent;
-//             -webkit-text-stroke: 3px #ffffff;
-
-//             @include mq(desktop) {
-//                 font-size: rem(100);
-//                 -webkit-text-stroke: 4px #ffffff;
-
-//             }
-
-//             & span {
-//                 display: block;
-//             }
-//         }
-
-//     }
-// }
-
-// .tongue {
-//     position: absolute;
-//     width: rem(200);
-//     left: rem(190);
-//     bottom: rem(105);
-
-//     transform: translateX(-20%);
-
-//     @include mq(desktop) {
-//         width: rem(280);
-//         left: rem(285);
-//         bottom: rem(140);
-//     }
-
-// }
-
-// //CONCEPT
-// .concept {
-//     margin-top: rem(100);
-//     margin-bottom: rem(100);
-
-//     &__inner {
-//         @include inner();
-//     }
-
-//     &__title {
-//         @include title-main("Vera pizza italiana.");
-//     }
-
-//     &__info {
-//         margin-bottom: rem(100);
-
-//         &__title {
-//             font-size: rem(30);
-//             font-weight: bold;
-//             margin-bottom: rem(30);
-//         }
-//     }
-
-//     & p {
-//         margin-bottom: rem(30);
-//     }
-
-//     &__img {
-//         position: relative;
-//         margin-top: rem(50);
-//         margin-bottom: rem(50);
-
-//         &__01 {
-//             display: block;
-//             width: rem(250);
-//             height: rem(180);
-//             margin-left: auto;
-//             margin-top: rem(-30);
-
-//             z-index: 9;
-
-//             @include mq(desktop) {
-//                 width: 100%;
-//                 height: auto;
-//             }
-//         }
-
-
-//         &__02 {
-//             position: absolute;
-//             width: rem(120);
-//             height: rem(120);
-//             top: rem(120);
-//             left: rem(40);
-//             z-index: 10;
-
-//             @include mq(desktop) {
-//                 display: none;
-//             }
-
-//         }
-//     }
-// }
-
-// //MENU
-// .menu {
-//     &__inner {
-//         @include inner();
-//     }
-
-//     &__title {
-//         @include title-main("Menu");
-//         text-align: center;
-
-//     }
-// }
+img {
+    vertical-align: bottom;
+    height: auto;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #E63946;
+    margin: -20px;
+
+    span {
+        margin-top: -20px;
+        margin-bottom: -30px;
+        margin-left: -5px;
+        display: block;
+        font-size: 3.5rem;
+        color: #E63946;
+        font-weight: bold;
+    }
+}
+
+
+
+//HEADER
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: rem(20);
+    transition: background-color .3s ease, box-shadow .3s ease;
+
+    &.scrolled {
+        background-color: rgba(190, 190, 190, 0.5);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    &__inner {
+        @include inner();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px auto;
+    }
+
+    .nav {
+
+
+
+        &__list {
+            display: flex;
+            gap: 20px;
+        }
+
+        &__item {
+            font-size: rem(16);
+            font-weight: bold;
+            display: none;
+
+            @include mq(desktop) {
+                display: block;
+            }
+
+
+            &:hover {
+                color: #E63946;
+                scale: 1.1;
+            }
+        }
+    }
+}
+
+//MAIN
+.main {
+    &__inner {
+        @include inner();
+    }
+
+    .hero {
+
+        margin-top: 40px;
+
+        &__inner {
+            @include inner();
+            background: url("../assets/firstview.png") no-repeat center center/cover;
+        }
+
+
+
+        &__title {
+            padding: rem(275) 0 rem(30) rem(20);
+
+            @include mq(desktop) {
+                padding-top: rem(50);
+                padding-left: rem(50);
+            }
+
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: "helvetica",
+            serif;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            font-size: rem(70);
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 3px #ffffff;
+
+            @include mq(desktop) {
+                font-size: rem(100);
+                -webkit-text-stroke: 4px #ffffff;
+
+            }
+
+            & span {
+                display: block;
+            }
+        }
+
+    }
+}
+
+.tongue {
+    position: absolute;
+    width: rem(200);
+    left: rem(190);
+    bottom: rem(105);
+
+    transform: translateX(-20%);
+
+    @include mq(desktop) {
+        width: rem(280);
+        left: rem(285);
+        bottom: rem(140);
+    }
+
+}
+
+//CONCEPT
+.concept {
+    margin-top: rem(100);
+
+    margin-bottom: rem(100);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("Vera pizza italiana.");
+    }
+
+    &__info {
+        margin-bottom: rem(100);
+
+        &__title {
+            font-size: rem(30);
+            font-weight: bold;
+            margin-bottom: rem(30);
+        }
+    }
+
+    & p {
+        margin-bottom: rem(30);
+    }
+
+    &__img {
+        position: relative;
+        margin-top: rem(50);
+        margin-bottom: rem(50);
+
+        &__01 {
+            display: block;
+            width: rem(250);
+            height: rem(180);
+            margin-left: auto;
+            margin-top: rem(-30);
+
+            z-index: 9;
+
+            @include mq(desktop) {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+
+        &__02 {
+            position: absolute;
+            width: rem(120);
+            height: rem(120);
+            top: rem(120);
+            left: rem(40);
+            z-index: 10;
+
+            @include mq(desktop) {
+                display: none;
+            }
+
+        }
+    }
+}
+
+//MENU
+.menu {
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("Menu");
+        text-align: center;
+    }
+}
