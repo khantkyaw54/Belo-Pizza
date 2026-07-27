@@ -1,5 +1,6 @@
 @use "sass:math";
 @import url('https://googleapis.com');
+@import url("https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap");
 
 $font-size-base: 16px;
 
@@ -16,7 +17,7 @@ $font-size-base: 16px;
 
 @mixin title-main($t, $m: auto) {
     margin-bottom: rem(30);
-    font-size: rem(25);
+    font-size: rem(40);
     font-weight: bold;
 
     &::before {
@@ -26,17 +27,46 @@ $font-size-base: 16px;
         width: fit-content;
         margin-left: $m;
         margin-right: auto;
-        padding-bottom: rem(-10);
-        font-size: rem(20);
+        font-size: rem(40);
         font-weight: 10;
-        font-family: 'Bonheur Royale', cursive;
+        font-family: "Bonheur Royale", cursive;
         transform: rotate(-5deg);
+        margin-bottom: rem(-40);
 
         @include mq("desktop") {
-            font-size: rem(16);
+            font-size: rem(60);
+            margin-bottom: rem(-50);
         }
     }
 }
+
+@mixin tag {
+    display: block;
+    margin-bottom: rem(15);
+    padding: rem(3);
+    border: 1px solid #000;
+    border-radius: rem(25);
+    text-align: center;
+    width: rem(100);
+
+    @include mq("desktop") {
+        width: rem(120);
+    }
+}
+
+@mixin tag01 {
+    &::before {
+        content: " ";
+        display: inline-block;
+        width: rem(10);
+        height: rem(10);
+        background-color: #E63946;
+        border-radius: 50%;
+        margin-right: rem(5);
+    }
+}
+
+
 
 $breakpoints: (
     "sp": 320px,
@@ -80,14 +110,14 @@ $breakpoints: (
 
 
 body {
-    font-family: "Bodoni 72", Arial, Helvetica, sans-serif;
+    font-family: "Bodoni 72", sans-serif;
     font-size: rem(12);
     color: #000000;
     background-color: #F5F5F5;
     line-height: 1.5;
     letter-spacing: 0.05em;
 
-    @include mq("tablet") {
+    @include mq("desktop") {
         font-size: rem(14);
     }
 }
@@ -145,7 +175,7 @@ img {
             font-weight: bold;
             display: none;
 
-            @include mq(desktop) {
+            @include mq("desktop") {
                 display: block;
             }
 
@@ -165,72 +195,79 @@ img {
     }
 
     .hero {
-
-        margin-top: 40px;
+        margin-top: rem(40);
 
         &__inner {
             @include inner();
-            background: url("../assets/firstview.png") no-repeat center center/cover;
+            position: relative;
         }
 
+        &__img {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 40px - 100px);
+            object-fit: cover;
 
+        }
 
         &__title {
-            padding: rem(275) 0 rem(30) rem(20);
-
-            @include mq(desktop) {
-                padding-top: rem(50);
-                padding-left: rem(50);
-            }
-
-            position: relative;
-            z-index: 10;
+            position: absolute;
+            bottom: 60px;
+            left: 20px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            font-family: "helvetica",
-            serif;
+            font-family: Helvetica, sans-serif;
             font-weight: 800;
-            letter-spacing: 0.05em;
-            font-size: rem(70);
-            line-height: 1;
+            font-size: clamp(rem(16), 12dvh, rem(80));
+            line-height: .9;
+            letter-spacing: .03em;
             color: transparent;
-            -webkit-text-stroke: 3px #ffffff;
+            -webkit-text-stroke: 3px #fff;
 
-            @include mq(desktop) {
-                font-size: rem(100);
-                -webkit-text-stroke: 4px #ffffff;
-
+            span {
+                display: block;
             }
 
-            & span {
-                display: block;
+            @include mq("desktop") {
+                bottom: 70px;
+                left: 60px;
+                font-size: clamp(rem(40), 14dvh, rem(100));
+                -webkit-text-stroke: 4px #fff;
             }
         }
 
+        .tongue {
+            width: rem(150);
+            position: absolute;
+            top: 235px;
+            left: 235px;
+            transform: translate(-50%, -50%);
+
+            @include mq("desktop") {
+                width: rem(280);
+                top: 280px;
+                left: 100%;
+                transform: translate(-50%, -50%);
+            }
+
+        }
+
     }
-}
-
-.tongue {
-    position: absolute;
-    width: rem(200);
-    left: rem(190);
-    bottom: rem(105);
-
-    transform: translateX(-20%);
-
-    @include mq(desktop) {
-        width: rem(280);
-        left: rem(285);
-        bottom: rem(140);
-    }
-
 }
 
 //CONCEPT
 .concept {
     margin-top: rem(100);
-    margin-bottom: rem(100);
+    margin-bottom: rem(180);
+
+    &__desc {
+        @include mq(desktop) {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+    }
 
     &__inner {
         @include inner();
@@ -238,10 +275,15 @@ img {
 
     &__title {
         @include title-main("Vera pizza italiana.", 0);
+
+        &::before {
+            margin-bottom: rem(-20);
+        }
+
     }
 
     &__info {
-        margin-bottom: rem(100);
+        margin-bottom: rem(60);
 
         &__title {
             font-size: rem(30);
@@ -256,37 +298,27 @@ img {
 
     &__img {
         position: relative;
-        margin-top: rem(50);
-        margin-bottom: rem(50);
+        width: min(90%, rem(900));
+        margin: 0 auto;
+        aspect-ratio: 16 / 10;
 
         &__01 {
-            display: block;
-            width: rem(250);
-            height: rem(180);
-            margin-left: auto;
-            margin-top: rem(-30);
-
-            z-index: 9;
-
-            @include mq(desktop) {
-                width: 100%;
-                height: auto;
-            }
+            width: 78%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
 
-
         &__02 {
+            width: 42%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             position: absolute;
-            width: rem(120);
-            height: rem(120);
-            top: rem(120);
-            left: rem(40);
-            z-index: 10;
-
-            @include mq(desktop) {
-                display: none;
-            }
-
+            left: 0;
+            top: 40%;
+            z-index: 2;
         }
     }
 }
@@ -381,6 +413,16 @@ img {
                 @include mq(desktop) {
                     margin-left: 0;
                     text-align: left;
+                }
+
+                p {
+                    margin-left: auto;
+                    margin-right: 0;
+
+                    @include mq(desktop) {
+                        margin-left: 0;
+                        margin-right: auto;
+                    }
                 }
             }
         }
@@ -530,18 +572,14 @@ img {
     &__description {
         display: grid;
         gap: rem(20);
-
-
-        @include mq(desktop) {
-            grid-template-columns: repeat(3, 1fr);
-        }
+        grid-template-columns: repeat(3, 1fr);
     }
 
     &__desc {
         &__title {
             font-size: rem(16);
             font-weight: bold;
-            margin: rem(10) 0;
+            margin: rem(20) 0;
         }
 
         p {
@@ -549,6 +587,524 @@ img {
         }
     }
 }
+
+//CONCEPT-PAGE
+.concept__hero,
+.menu__hero {
+
+    &__inner {
+        @include inner();
+        position: relative;
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 60px - 100px);
+        object-fit: cover;
+    }
+
+    &__title {
+        overflow: hidden;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-family: Helvetica, sans-serif;
+        font-weight: 800;
+        font-size: clamp(rem(20), 6dvh, rem(80));
+        line-height: .9;
+        letter-spacing: 0.02em;
+        color: transparent;
+        -webkit-text-stroke: 2px #fff;
+
+        @include mq("desktop") {
+            bottom: 20px;
+            right: 30px;
+            font-size: clamp(rem(20), 14dvh, rem(100));
+            -webkit-text-stroke: 4px #fff;
+        }
+
+        span {
+            display: inline-block;
+        }
+    }
+}
+
+
+
+.concept02 {
+    margin-top: rem(100);
+    margin-bottom: rem(120);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        max-height: 225px;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: rem(50);
+        display: block;
+
+        @include mq(desktop) {
+            max-width: 800px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        font-size: rem(18);
+        font-weight: bold;
+        margin-bottom: rem(30);
+    }
+
+    &__subtitle {
+        font-size: rem(16);
+        margin-bottom: rem(20);
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: rem(20);
+    }
+}
+
+.concept03 {
+    margin-top: rem(100);
+    margin-bottom: rem(120);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: rem(40);
+    }
+
+    &__title {
+        max-width: rem(300);
+        display: block;
+
+        font-size: clamp(rem(18), 3dvh, rem(80));
+        font-weight: 500;
+        margin-bottom: rem(30);
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: rem(40);
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(desktop) {
+
+            max-width: rem(800);
+            font-size: clamp(rem(18), 6dvh, rem(80));
+            gap: rem(120);
+        }
+
+    }
+
+    &__title01 {
+        position: relative;
+        line-height: normal;
+
+        &::after {
+            content: " ";
+            display: block;
+            width: 2px;
+            height: 65px;
+            background: #000;
+            rotate: 25deg;
+            position: absolute; // Position the pseudo-element absolutely
+            top: 0; // Center vertically
+            right: -15px; // Align to the right
+
+            @include mq(desktop) {
+                height: 110px;
+                right: -55px;
+            }
+
+        }
+
+
+    }
+
+    &__title02 {
+        font-size: clamp(rem(16), 2.5dvh, rem(80));
+        font-weight: 700;
+
+        @include mq(desktop) {
+            font-size: clamp(rem(18), 5dvh, rem(80));
+        }
+
+    }
+
+    &__description {
+        margin-top: rem(50);
+        display: grid;
+
+        @include mq(desktop) {
+            max-width: rem(850);
+            margin-left: auto;
+            margin-right: auto;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: rem(50);
+        }
+
+        p {
+            margin-bottom: rem(40);
+        }
+    }
+
+
+}
+
+//Concept04
+.concept04 {
+    margin-top: rem(100);
+    margin-bottom: rem(120);
+
+
+
+    &__inner {
+
+        @include inner();
+
+        @include mq(desktop) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: -50px;
+
+            > :nth-child(1) {
+                order: 1;
+            }
+
+
+        }
+    }
+
+
+
+    &__img {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 2fr;
+        gap: 15px;
+        margin-bottom: rem(80);
+
+        @include mq(desktop) {
+            margin-bottom: 0;
+
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+
+    }
+
+    &__info {
+        @include mq(desktop) {
+            display: block;
+            margin-top: -170px;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+    }
+
+    &__title {
+        font-size: rem(20);
+        font-weight: bold;
+        margin-bottom: rem(30);
+    }
+
+    p {
+        margin-bottom: rem(40);
+    }
+}
+
+//menu-page
+.menu-pizza {
+    &__inner {
+        @include inner();
+        margin-top: rem(120);
+        margin-bottom: rem(120);
+    }
+
+    &__title {
+        @include title-main("Pizza");
+        text-align: center;
+
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: rem(40);
+
+        @include mq(desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+    }
+
+    &__card {
+        margin-bottom: rem(60);
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: rem(20);
+            max-width: 200px;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: rem(20);
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            @include mq(desktop) {
+                max-width: 300px;
+                max-height: 400px;
+                margin-left: 0;
+            }
+        }
+
+        &__title {
+            @include mq(desktop) {
+                display: flex;
+                gap: rem(20);
+                align-items: center;
+                margin-bottom: rem(20);
+            }
+
+            & span {
+                display: block;
+                margin-bottom: rem(20);
+
+                @include mq(desktop) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__subtitle {
+            font-size: rem(18);
+            font-weight: bold;
+            color: #E63946;
+            margin-bottom: rem(10);
+
+            @include mq(desktop) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__content {
+            text-align: center;
+
+
+            @include mq(desktop) {
+                text-align: left;
+            }
+
+            & .tags {
+
+
+                @include mq(desktop) {
+                    display: flex;
+                    gap: rem(20);
+                }
+            }
+
+
+            & .tag {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                @include tag();
+
+                @include mq(desktop) {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+            }
+
+            & .tag01 {
+                @include tag01();
+            }
+
+            & .price {
+                margin-top: rem(15);
+                font-size: rem(18);
+                font-weight: bold;
+
+            }
+        }
+
+
+    }
+
+
+}
+
+//menu-lunch
+.menu-lunch {
+    &__inner {
+        @include inner();
+        margin-top: rem(120);
+        margin-bottom: rem(120);
+    }
+
+    &__title {
+        @include title-main("Lunch");
+        text-align: center;
+    }
+
+    &__card {
+        display: grid;
+        gap: rem(40);
+        margin-bottom: rem(60);
+
+        @include mq(desktop) {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: rem(20);
+            max-width: rem(350);
+            max-height: rem(300);
+            object-fit: cover;
+            border-radius: rem(20);
+
+            @include mq(desktop) {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        &__title {
+            @include mq(desktop) {
+                display: flex;
+                gap: rem(20);
+                align-items: center;
+                margin-bottom: rem(20);
+            }
+
+            & span {
+                display: block;
+                margin-bottom: rem(20);
+
+                @include mq(desktop) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__subtitle {
+            font-size: rem(18);
+            font-weight: bold;
+            color: #E63946;
+            margin-bottom: rem(10);
+
+            @include mq(desktop) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__content {
+            & .tags {
+                @include mq(desktop) {
+                    display: flex;
+                    gap: rem(20);
+                }
+            }
+
+
+            & .tag {
+                @include tag();
+
+                @include mq(desktop) {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+
+            }
+
+            & .tag01 {
+                @include tag01();
+            }
+
+            & .price {
+                margin-top: rem(15);
+                font-size: rem(18);
+                font-weight: bold;
+
+            }
+        }
+
+    }
+}
+
+//menu-drink
+.menu-drink {
+    &__inner {
+        @include inner();
+        margin-top: rem(120);
+        margin-bottom: rem(120);
+    }
+
+    &__title {
+        @include title-main("Wine");
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-size: rem(28);
+        font-weight: oblique;
+        margin: rem(40) 0;
+        text-align: center;
+    }
+
+    &__cards {
+        display: grid;
+        gap: rem(40);
+        margin-bottom: rem(60);
+        grid-template-columns: repeat(2, 1fr);
+
+        @include mq(desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__card {
+        &__title {
+            font-size: rem(18);
+            font-weight: bold;
+            margin-bottom: rem(20);
+        }
+
+        & .wine__price {
+            margin-top: rem(15);
+            font-size: rem(12);
+            font-weight: bold;
+        }
+    }
+}
+
+
+
 
 //footer
 .footer {

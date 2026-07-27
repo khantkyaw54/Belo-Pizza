@@ -41,4 +41,28 @@ tl.from("header,.hero__inner", {
         ease: "elastic.out(1, 0.4)"
     }, "-=0.3");
 
-//slider
+//concept//menu
+
+gsap.from(".concept__hero__title span, .menu__hero__title span", {
+    delay: .5,
+    x: -window.innerWidth,
+    opacity: 0,
+    rotation: 10,
+    duration: 1,
+    ease: "power4.out",
+    stagger: {
+        each: .2,
+        from: "end"
+    }
+});
+
+gsap.from(".concept__hero__img, .menu__hero__img", {
+
+    opacity: 0,
+
+    duration: 0.5,
+
+    ease: "power1.out",
+
+    delay: 0.5
+});

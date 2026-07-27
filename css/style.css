@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://googleapis.com");
+@import url("https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap");
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -17,14 +18,14 @@
 }
 
 body {
-  font-family: "Bodoni 72", Arial, Helvetica, sans-serif;
+  font-family: "Bodoni 72", sans-serif;
   font-size: 0.75rem;
   color: #000000;
   background-color: #F5F5F5;
   line-height: 1.5;
   letter-spacing: 0.05em;
 }
-@media (width >= 480px) {
+@media (width >= 740px) {
   body {
     font-size: 0.875rem;
   }
@@ -94,64 +95,74 @@ img {
   margin-right: auto;
 }
 .main .hero {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 .main .hero__inner {
   max-width: 1180px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  background: url("../assets/firstview.png") no-repeat center center/cover;
+  position: relative;
+}
+.main .hero__img {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 40px - 100px);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main .hero__title {
-  padding: 17.1875rem 0 1.875rem 1.25rem;
-  position: relative;
-  z-index: 10;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  font-family: "helvetica", serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  font-size: 4.375rem;
-  line-height: 1;
+  font-size: clamp(1rem, 12dvh, 5rem);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
   color: transparent;
-  -webkit-text-stroke: 3px #ffffff;
-}
-@media (width >= 740px) {
-  .main .hero__title {
-    padding-top: 3.125rem;
-    padding-left: 3.125rem;
-  }
-}
-@media (width >= 740px) {
-  .main .hero__title {
-    font-size: 6.25rem;
-    -webkit-text-stroke: 4px #ffffff;
-  }
+  -webkit-text-stroke: 3px #fff;
 }
 .main .hero__title span {
   display: block;
 }
-
-.tongue {
+@media (width >= 740px) {
+  .main .hero__title {
+    bottom: 70px;
+    left: 60px;
+    font-size: clamp(2.5rem, 14dvh, 6.25rem);
+    -webkit-text-stroke: 4px #fff;
+  }
+}
+.main .hero .tongue {
+  width: 9.375rem;
   position: absolute;
-  width: 12.5rem;
-  left: 11.875rem;
-  bottom: 6.5625rem;
-  transform: translateX(-20%);
+  top: 235px;
+  left: 235px;
+  transform: translate(-50%, -50%);
 }
 @media (width >= 740px) {
-  .tongue {
+  .main .hero .tongue {
     width: 17.5rem;
-    left: 17.8125rem;
-    bottom: 8.75rem;
+    top: 280px;
+    left: 100%;
+    transform: translate(-50%, -50%);
   }
 }
 
 .concept {
   margin-top: 6.25rem;
-  margin-bottom: 6.25rem;
+  margin-bottom: 11.25rem;
+}
+@media (width >= 740px) {
+  .concept__desc {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: start;
+  }
 }
 .concept__inner {
   max-width: 1180px;
@@ -161,7 +172,7 @@ img {
 }
 .concept__title {
   margin-bottom: 1.875rem;
-  font-size: 1.5625rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 .concept__title::before {
@@ -173,19 +184,23 @@ img {
   width: fit-content;
   margin-left: 0;
   margin-right: auto;
-  padding-bottom: -0.625rem;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 10;
   font-family: "Bonheur Royale", cursive;
   transform: rotate(-5deg);
+  margin-bottom: -2.5rem;
 }
 @media (width >= 740px) {
   .concept__title::before {
-    font-size: 1rem;
+    font-size: 3.75rem;
+    margin-bottom: -3.125rem;
   }
 }
+.concept__title::before {
+  margin-bottom: -1.25rem;
+}
 .concept__info {
-  margin-bottom: 6.25rem;
+  margin-bottom: 3.75rem;
 }
 .concept__info__title {
   font-size: 1.875rem;
@@ -197,35 +212,28 @@ img {
 }
 .concept__img {
   position: relative;
-  margin-top: 3.125rem;
-  margin-bottom: 3.125rem;
+  width: min(90%, 56.25rem);
+  margin: 0 auto;
+  aspect-ratio: 16/10;
 }
 .concept__img__01 {
-  display: block;
-  width: 15.625rem;
-  height: 11.25rem;
-  margin-left: auto;
-  margin-top: -1.875rem;
-  z-index: 9;
-}
-@media (width >= 740px) {
-  .concept__img__01 {
-    width: 100%;
-    height: auto;
-  }
+  width: 78%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .concept__img__02 {
+  width: 42%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
-  width: 7.5rem;
-  height: 7.5rem;
-  top: 7.5rem;
-  left: 2.5rem;
-  z-index: 10;
-}
-@media (width >= 740px) {
-  .concept__img__02 {
-    display: none;
-  }
+  left: 0;
+  top: 40%;
+  z-index: 2;
 }
 
 .menu__inner {
@@ -236,7 +244,7 @@ img {
 }
 .menu__title {
   margin-bottom: 1.875rem;
-  font-size: 1.5625rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
 }
@@ -249,15 +257,16 @@ img {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: -0.625rem;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 10;
   font-family: "Bonheur Royale", cursive;
   transform: rotate(-5deg);
+  margin-bottom: -2.5rem;
 }
 @media (width >= 740px) {
   .menu__title::before {
-    font-size: 1rem;
+    font-size: 3.75rem;
+    margin-bottom: -3.125rem;
   }
 }
 .menu__card {
@@ -330,6 +339,16 @@ img {
     text-align: left;
   }
 }
+.menu__card__item.reverse p {
+  margin-left: auto;
+  margin-right: 0;
+}
+@media (width >= 740px) {
+  .menu__card__item.reverse p {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
 
 .instagram {
   margin-top: 6.25rem;
@@ -355,7 +374,7 @@ img {
 }
 .instagram__title {
   margin-bottom: 1.875rem;
-  font-size: 1.5625rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
 }
@@ -368,15 +387,16 @@ img {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: -0.625rem;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 10;
   font-family: "Bonheur Royale", cursive;
   transform: rotate(-5deg);
+  margin-bottom: -2.5rem;
 }
 @media (width >= 740px) {
   .instagram__title::before {
-    font-size: 1rem;
+    font-size: 3.75rem;
+    margin-bottom: -3.125rem;
   }
 }
 .instagram__card {
@@ -477,19 +497,579 @@ img {
 .information__description {
   display: grid;
   gap: 1.25rem;
-}
-@media (width >= 740px) {
-  .information__description {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(3, 1fr);
 }
 .information__desc__title {
   font-size: 1rem;
   font-weight: bold;
-  margin: 0.625rem 0;
+  margin: 1.25rem 0;
 }
 .information__desc p {
   margin: 0.625rem 0;
+}
+
+.concept__hero__inner,
+.menu__hero__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.concept__hero__img,
+.menu__hero__img {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px - 100px);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.concept__hero__title,
+.menu__hero__title {
+  overflow: hidden;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 6dvh, 5rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+@media (width >= 740px) {
+  .concept__hero__title,
+.menu__hero__title {
+    bottom: 20px;
+    right: 30px;
+    font-size: clamp(1.25rem, 14dvh, 6.25rem);
+    -webkit-text-stroke: 4px #fff;
+  }
+}
+.concept__hero__title span,
+.menu__hero__title span {
+  display: inline-block;
+}
+
+.concept02 {
+  margin-top: 6.25rem;
+  margin-bottom: 7.5rem;
+}
+.concept02__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.concept02__img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 225px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.125rem;
+  display: block;
+}
+@media (width >= 740px) {
+  .concept02__img {
+    max-width: 800px;
+    max-height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.concept02__title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+}
+.concept02__subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+}
+.concept02 p {
+  margin-bottom: 1.25rem;
+}
+
+.concept03 {
+  margin-top: 6.25rem;
+  margin-bottom: 7.5rem;
+}
+.concept03__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.concept03__img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2.5rem;
+}
+.concept03__title {
+  max-width: 18.75rem;
+  display: block;
+  font-size: clamp(1.125rem, 3dvh, 5rem);
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (width >= 740px) {
+  .concept03__title {
+    max-width: 50rem;
+    font-size: clamp(1.125rem, 6dvh, 5rem);
+    gap: 7.5rem;
+  }
+}
+.concept03__title01 {
+  position: relative;
+  line-height: normal;
+}
+.concept03__title01::after {
+  content: " ";
+  display: block;
+  width: 2px;
+  height: 65px;
+  background: #000;
+  rotate: 25deg;
+  position: absolute;
+  top: 0;
+  right: -15px;
+}
+@media (width >= 740px) {
+  .concept03__title01::after {
+    height: 110px;
+    right: -55px;
+  }
+}
+.concept03__title02 {
+  font-size: clamp(1rem, 2.5dvh, 5rem);
+  font-weight: 700;
+}
+@media (width >= 740px) {
+  .concept03__title02 {
+    font-size: clamp(1.125rem, 5dvh, 5rem);
+  }
+}
+.concept03__description {
+  margin-top: 3.125rem;
+  display: grid;
+}
+@media (width >= 740px) {
+  .concept03__description {
+    max-width: 53.125rem;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 3.125rem;
+         column-gap: 3.125rem;
+  }
+}
+.concept03__description p {
+  margin-bottom: 2.5rem;
+}
+
+.concept04 {
+  margin-top: 6.25rem;
+  margin-bottom: 7.5rem;
+}
+.concept04__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (width >= 740px) {
+  .concept04__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: -50px;
+         column-gap: -50px;
+  }
+  .concept04__inner > :nth-child(1) {
+    order: 1;
+  }
+}
+.concept04__img {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 2fr;
+  gap: 15px;
+  margin-bottom: 5rem;
+}
+@media (width >= 740px) {
+  .concept04__img {
+    margin-bottom: 0;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+@media (width >= 740px) {
+  .concept04__info {
+    display: block;
+    margin-top: -170px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+.concept04__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+}
+.concept04 p {
+  margin-bottom: 2.5rem;
+}
+
+.menu-pizza__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+}
+.menu-pizza__title {
+  margin-bottom: 1.875rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.menu-pizza__title::before {
+  content: "Pizza";
+  display: block;
+  color: #E63946;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5rem;
+  font-weight: 10;
+  font-family: "Bonheur Royale", cursive;
+  transform: rotate(-5deg);
+  margin-bottom: -2.5rem;
+}
+@media (width >= 740px) {
+  .menu-pizza__title::before {
+    font-size: 3.75rem;
+    margin-bottom: -3.125rem;
+  }
+}
+.menu-pizza__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+@media (width >= 740px) {
+  .menu-pizza__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.menu-pizza__card {
+  margin-bottom: 3.75rem;
+}
+.menu-pizza__card__img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.25rem;
+  max-width: 200px;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+@media (width >= 740px) {
+  .menu-pizza__card__img {
+    max-width: 300px;
+    max-height: 400px;
+    margin-left: 0;
+  }
+}
+@media (width >= 740px) {
+  .menu-pizza__card__title {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+}
+.menu-pizza__card__title span {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+@media (width >= 740px) {
+  .menu-pizza__card__title span {
+    margin-bottom: 0;
+  }
+}
+.menu-pizza__card__subtitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #E63946;
+  margin-bottom: 0.625rem;
+}
+@media (width >= 740px) {
+  .menu-pizza__card__subtitle {
+    margin-bottom: 0;
+  }
+}
+.menu-pizza__card__content {
+  text-align: center;
+}
+@media (width >= 740px) {
+  .menu-pizza__card__content {
+    text-align: left;
+  }
+}
+@media (width >= 740px) {
+  .menu-pizza__card__content .tags {
+    display: flex;
+    gap: 1.25rem;
+  }
+}
+.menu-pizza__card__content .tag {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 0.9375rem;
+  padding: 0.1875rem;
+  border: 1px solid #000;
+  border-radius: 1.5625rem;
+  text-align: center;
+  width: 6.25rem;
+}
+@media (width >= 740px) {
+  .menu-pizza__card__content .tag {
+    width: 7.5rem;
+  }
+}
+@media (width >= 740px) {
+  .menu-pizza__card__content .tag {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.menu-pizza__card__content .tag01::before {
+  content: " ";
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #E63946;
+  border-radius: 50%;
+  margin-right: 0.3125rem;
+}
+.menu-pizza__card__content .price {
+  margin-top: 0.9375rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.menu-lunch__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+}
+.menu-lunch__title {
+  margin-bottom: 1.875rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.menu-lunch__title::before {
+  content: "Lunch";
+  display: block;
+  color: #E63946;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5rem;
+  font-weight: 10;
+  font-family: "Bonheur Royale", cursive;
+  transform: rotate(-5deg);
+  margin-bottom: -2.5rem;
+}
+@media (width >= 740px) {
+  .menu-lunch__title::before {
+    font-size: 3.75rem;
+    margin-bottom: -3.125rem;
+  }
+}
+.menu-lunch__card {
+  display: grid;
+  gap: 2.5rem;
+  margin-bottom: 3.75rem;
+}
+@media (width >= 740px) {
+  .menu-lunch__card {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+.menu-lunch__card__img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.25rem;
+  max-width: 21.875rem;
+  max-height: 18.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.25rem;
+}
+@media (width >= 740px) {
+  .menu-lunch__card__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (width >= 740px) {
+  .menu-lunch__card__title {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+}
+.menu-lunch__card__title span {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+@media (width >= 740px) {
+  .menu-lunch__card__title span {
+    margin-bottom: 0;
+  }
+}
+.menu-lunch__card__subtitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #E63946;
+  margin-bottom: 0.625rem;
+}
+@media (width >= 740px) {
+  .menu-lunch__card__subtitle {
+    margin-bottom: 0;
+  }
+}
+@media (width >= 740px) {
+  .menu-lunch__card__content .tags {
+    display: flex;
+    gap: 1.25rem;
+  }
+}
+.menu-lunch__card__content .tag {
+  display: block;
+  margin-bottom: 0.9375rem;
+  padding: 0.1875rem;
+  border: 1px solid #000;
+  border-radius: 1.5625rem;
+  text-align: center;
+  width: 6.25rem;
+}
+@media (width >= 740px) {
+  .menu-lunch__card__content .tag {
+    width: 7.5rem;
+  }
+}
+@media (width >= 740px) {
+  .menu-lunch__card__content .tag {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.menu-lunch__card__content .tag01::before {
+  content: " ";
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #E63946;
+  border-radius: 50%;
+  margin-right: 0.3125rem;
+}
+.menu-lunch__card__content .price {
+  margin-top: 0.9375rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.menu-drink__inner {
+  max-width: 1180px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+}
+.menu-drink__title {
+  margin-bottom: 1.875rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.menu-drink__title::before {
+  content: "Wine";
+  display: block;
+  color: #E63946;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5rem;
+  font-weight: 10;
+  font-family: "Bonheur Royale", cursive;
+  transform: rotate(-5deg);
+  margin-bottom: -2.5rem;
+}
+@media (width >= 740px) {
+  .menu-drink__title::before {
+    font-size: 3.75rem;
+    margin-bottom: -3.125rem;
+  }
+}
+.menu-drink__subtitle {
+  font-size: 1.75rem;
+  font-weight: oblique;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+.menu-drink__cards {
+  display: grid;
+  gap: 2.5rem;
+  margin-bottom: 3.75rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (width >= 740px) {
+  .menu-drink__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.menu-drink__card__title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+.menu-drink__card .wine__price {
+  margin-top: 0.9375rem;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 .footer {
