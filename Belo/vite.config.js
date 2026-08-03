@@ -1,6 +1,15 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-    base: "./" // 追加
-})
+    base: "./",
+
+    build: {
+        rollupOptions: {
+            input: {
+                index: "index.html",
+                concept: "concept.html",
+                menu: "menu.html",
+            },
+        },
+    },
+});
