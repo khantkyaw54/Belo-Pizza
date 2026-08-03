@@ -80,32 +80,12 @@ $breakpoints: (
     }
 }
 
-//header
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    background: transparent;
-    transition: all .5s ease;
-
-    &.scrolled {
-        background:
-            linear-gradient(180deg,
-                rgba(255, 255, 255, .35),
-                rgba(255, 255, 255, .12));
-
-        backdrop-filter: blur(30px) saturate(220%);
-        -webkit-backdrop-filter: blur(30px) saturate(220%);
-
-        border-bottom: 1px solid rgba(255, 255, 255, .25);
-
-        box-shadow:
-            0 10px 40px rgba(0, 0, 0, .12),
-            inset 0 1px 1px rgba(255, 255, 255, .7),
-            inset 0 -1px 1px rgba(255, 255, 255, .15);
-    }
+html {
+    scroll-behavior: smooth;
 }
+
+
+
 
 
 
@@ -113,7 +93,7 @@ body {
     font-family: "Bodoni 72", sans-serif;
     font-size: rem(12);
     color: #000000;
-    background-color: #F5F5F5;
+    background-color: #fffef0;
     line-height: 1.5;
     letter-spacing: 0.05em;
 
@@ -135,26 +115,46 @@ img {
 
 
 
+
+
 //HEADER
 
-.header {
+.header,
+.header-top {
+
     position: sticky;
-    top: 0;
+    top: 10px;
     z-index: 1000;
     transition: background-color .3s ease, box-shadow .3s ease;
     padding: rem(20) 0;
+    border-radius: 50px;
+
+    @include mq("desktop") {
+        @include inner();
+    }
 
     &__title {
-        font-size: rem(45);
+        font-size: rem(32);
         font-weight: bold;
         color: #E63946;
 
     }
 
     &.scrolled {
-        background-color: rgba(190, 190, 190, 0.5);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        background:
+            linear-gradient(180deg,
+                rgba(255, 255, 255, .35),
+                rgba(255, 255, 255, .12));
+
+        backdrop-filter: blur(30px) saturate(220%);
+        -webkit-backdrop-filter: blur(30px) saturate(220%);
+
+        border-bottom: 1px solid rgba(255, 255, 255, .25);
+
+        box-shadow:
+            0 10px 40px rgba(0, 0, 0, .12),
+            inset 0 1px 1px rgba(255, 255, 255, .7),
+            inset 0 -1px 1px rgba(255, 255, 255, .15);
     }
 
     &__inner {
@@ -218,7 +218,7 @@ img {
             flex-direction: column;
             font-family: Helvetica, sans-serif;
             font-weight: 800;
-            font-size: clamp(rem(16), 12dvh, rem(80));
+            font-size: clamp(rem(10), 9dvh, rem(80));
             line-height: .9;
             letter-spacing: .03em;
             color: transparent;
@@ -239,13 +239,13 @@ img {
         .tongue {
             width: rem(150);
             position: absolute;
-            top: 235px;
-            left: 235px;
+            top: 250px;
+            left: 215px;
             transform: translate(-50%, -50%);
 
             @include mq("desktop") {
                 width: rem(280);
-                top: 280px;
+                top: 288px;
                 left: 100%;
                 transform: translate(-50%, -50%);
             }
@@ -298,12 +298,12 @@ img {
 
     &__img {
         position: relative;
-        width: min(90%, rem(900));
+        width: min(90%, rem(800));
         margin: 0 auto;
         aspect-ratio: 16 / 10;
 
         &__01 {
-            width: 78%;
+            width: 68%;
             aspect-ratio: 4 / 3;
             object-fit: cover;
             position: absolute;
@@ -312,11 +312,11 @@ img {
         }
 
         &__02 {
-            width: 42%;
+            width: 32%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
             position: absolute;
-            left: 0;
+            left: 15%;
             top: 40%;
             z-index: 2;
         }
@@ -325,16 +325,23 @@ img {
 
 //MENU
 .menu {
-    &__inner {
-        @include inner();
-    }
+
 
     &__title {
-        @include title-main("Menu");
+        &__inner {
+            @include inner();
+        }
+
+        @include title-main("Our Specials");
         text-align: center;
+        margin-bottom: rem(60);
     }
 
     &__card {
+        &__inner {
+            @include inner();
+        }
+
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -344,6 +351,58 @@ img {
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
         }
+
+        &__content {
+            & .tags {
+                display: grid;
+
+
+                @include mq(desktop) {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: rem(20);
+                }
+            }
+
+
+            & .tag {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                @include tag();
+
+                @include mq(desktop) {}
+
+            }
+
+            & .tag01 {
+                @include tag01();
+            }
+
+            & .price {
+                margin-top: rem(15);
+                font-size: rem(18);
+                font-weight: bold;
+
+            }
+        }
+
+        &__title {
+
+
+            & span {
+                display: block;
+            }
+        }
+
+        &__subtitle {
+            font-size: rem(20);
+            font-weight: bold;
+            color: #E63946;
+            margin: rem(10) 0;
+
+
+        }
+
 
         &__item {
 
@@ -426,14 +485,104 @@ img {
                 }
             }
         }
+    }
+}
 
+//menu-slider
+.menu-slider {
 
+    margin-top: rem(100);
+
+    .menuSwiper {
+        width: 100%;
+        padding: rem(40) 0 rem(80);
+
+        .swiper-wrapper {
+            align-items: flex-start;
+        }
+
+        .swiper-slide {
+            transition: .4s;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-card {
+            width: 100%;
+            text-align: center;
+            transition: .45s;
+
+            img {
+                width: 100%;
+                aspect-ratio: 4/5;
+                object-fit: cover;
+                max-height: clamp(320px, 45vw, 520px);
+                border-radius: rem(24);
+                box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, .1);
+                transition: .45s;
+            }
+
+            &__content {
+                margin-top: rem(20);
+                transition: .45s;
+            }
+
+            h3 {
+                color: #E63946;
+                font-size: rem(24);
+                margin-bottom: rem(8);
+                font-weight: bold;
+            }
+
+            span {
+                display: block;
+                margin-bottom: rem(10);
+                color: #666;
+            }
+
+            .price {
+                font-size: rem(26);
+                font-weight: bold;
+            }
+        }
+
+        /* default */
+        .swiper-slide .menu-card {
+            transform: scale(.82);
+            opacity: .45;
+        }
+
+        /* active */
+        .swiper-slide-active .menu-card {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+@include mq(desktop) {
+    .menu-slider {
+        .menu-card {
+
+            h3 {
+                font-size: rem(34);
+            }
+
+            .price {
+                font-size: rem(34);
+            }
+        }
+
+        .menuSwiper {
+            width: 90%;
+        }
     }
 }
 
 //Insatgram
 .instagram {
     margin-top: rem(100);
+    margin-bottom: rem(100);
 
     & a {
         display: flex;
@@ -455,7 +604,7 @@ img {
     }
 
     &__title {
-        @include title-main("Instagram");
+        @include title-main("Follow us");
         text-align: center;
     }
 
@@ -488,12 +637,13 @@ img {
 //informations
 .information {
     margin-top: rem(100);
+    overflow: hidden;
 
     &__title {
         font-size: rem(40);
 
         @include mq(desktop) {
-            font-size: rem(120);
+            font-size: rem(100);
         }
 
         &::after {
@@ -611,9 +761,9 @@ img {
         right: 10px;
         font-family: Helvetica, sans-serif;
         font-weight: 800;
-        font-size: clamp(rem(20), 6dvh, rem(80));
+        font-size: clamp(rem(20), 5dvh, rem(80));
         line-height: .9;
-        letter-spacing: 0.02em;
+        letter-spacing: 0;
         color: transparent;
         -webkit-text-stroke: 2px #fff;
 
@@ -838,7 +988,7 @@ img {
     }
 
     &__title {
-        @include title-main("Pizza");
+        @include title-main("Made with love.");
         text-align: center;
 
     }
@@ -915,8 +1065,6 @@ img {
             }
 
             & .tags {
-
-
                 @include mq(desktop) {
                     display: flex;
                     gap: rem(20);
@@ -964,7 +1112,7 @@ img {
     }
 
     &__title {
-        @include title-main("Lunch");
+        @include title-main("Buon appetito.");
         text-align: center;
     }
 
@@ -1066,12 +1214,12 @@ img {
     }
 
     &__title {
-        @include title-main("Wine");
+        @include title-main("Selected Wines.");
         text-align: center;
     }
 
     &__subtitle {
-        font-size: rem(28);
+        font-size: rem(32);
         font-weight: oblique;
         margin: rem(40) 0;
         text-align: center;
@@ -1119,5 +1267,162 @@ img {
     small {
         display: block;
         text-align: center;
+    }
+}
+
+//hamburger menu
+/* =========================
+   Hamburger Button
+========================= */
+
+.hamburger {
+    width: rem(72);
+    height: rem(72);
+    border: none;
+    border-radius: 50%;
+    background: #E63946;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 9999;
+
+    @include mq(desktop) {
+        display: none;
+    }
+}
+
+.hamburger__inner {
+    position: relative;
+    width: rem(34);
+    height: rem(34);
+}
+
+.hamburger__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: rem(2);
+    background: #fff;
+    border-radius: rem(10);
+    transform-origin: center;
+}
+
+.hamburger__line--top {
+    top: rem(7);
+}
+
+.hamburger__line--bottom {
+    bottom: rem(7);
+}
+
+.hamburger__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: rem(11);
+    font-weight: bold;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* =========================
+   Mobile Menu
+========================= */
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: #fffef0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9000;
+    overflow: hidden;
+}
+
+.mobile-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(36);
+    align-items: center;
+}
+
+.mobile-menu__item {
+    list-style: none;
+    text-align: center;
+
+    >a {
+        font-size: clamp(rem(34), 7vw, rem(48));
+        font-weight: bold;
+        color: #222;
+        text-decoration: none;
+        transition: .3s;
+
+        &:hover {
+            color: #E63946;
+        }
+    }
+}
+
+.hamburger-concept-span,
+.hamburger-menu-span {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    margin-top: rem(10);
+
+    a {
+        font-size: rem(14);
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+            color: #E63946;
+        }
+    }
+}
+
+/* =========================
+   Close Button
+========================= */
+
+.menu-close {
+    position: absolute;
+    top: rem(30);
+    right: rem(25);
+
+    width: rem(70);
+    height: rem(70);
+
+    border: none;
+    border-radius: 50%;
+
+    background: #E63946;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    span {
+        position: absolute;
+        width: rem(30);
+        height: rem(2);
+        background: #fff;
+    }
+
+    span:first-child {
+        transform: rotate(45deg);
+    }
+
+    span:last-child {
+        transform: rotate(-45deg);
     }
 }

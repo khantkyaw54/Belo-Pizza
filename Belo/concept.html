@@ -15,22 +15,79 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header-top">
+
         <div class="header__inner">
+
             <a href="./index.html">
                 <h1 class="header__title">Pizzeria-Belò</h1>
             </a>
+
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#top">Top</a></li>
+                    <li class="nav__item"><a href="index.html">Top</a></li>
                     <li class="nav__item"><a href="concept.html">Concept</a></li>
                     <li class="nav__item"><a href="menu.html">Menu</a></li>
-                    <li class="nav__item"><a href="#news">News</a></li>
-                    <li class="nav__item"><a href="#informations">Informations</a></li>
+                    <li class="nav__item"><a href="#instagram">Instagram</a></li>
+                    <li class="nav__item"><a href="#information">Informations</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger" aria-label="Menu">
+                <span class="hamburger__inner">
+                    <span class="hamburger__line hamburger__line--top"></span>
+                    <span class="hamburger__text">Menu</span>
+                    <span class="hamburger__line hamburger__line--bottom"></span>
+                </span>
+            </button>
+
         </div>
+
     </header>
+    <div class="mobile-menu">
+
+        <button class="menu-close" aria-label="Close Menu">
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="mobile-menu__list">
+
+            <li class="mobile-menu__item">
+                <a href="index.html">Top</a>
+            </li>
+
+            <li class="mobile-menu__item hamburger-concept">
+                <a href="concept.html">Concept</a>
+
+                <div class="hamburger-concept-span">
+                    <a href="#">本場の石窯</a>
+                    <a href="#">食材へのこだわり</a>
+                </div>
+            </li>
+
+            <li class="mobile-menu__item hamburger-menu">
+                <a href="menu.html">Menu</a>
+
+                <div class="hamburger-menu-span">
+                    <a href="menu.html#pizza-menu">ピッツァ</a>
+                    <a href="menu.html#lunch-menu">セットメニュー</a>
+                    <a href="menu.html#wine-menu">ワイン</a>
+                </div>
+            </li>
+
+            <li class="mobile-menu__item">
+                <a href="#instagram">Instagram</a>
+            </li>
+
+            <li class="mobile-menu__item">
+                <a href="#information">Informations</a>
+            </li>
+
+        </ul>
+
+    </div>
+
 
     <main>
         <div class="main">

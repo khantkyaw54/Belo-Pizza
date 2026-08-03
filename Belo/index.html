@@ -32,22 +32,81 @@
           </div>
         </div>
       </section>
+
       <header class="header">
+
         <div class="header__inner">
+
           <a href="./index.html">
             <h1 class="header__title">Pizzeria-Belò</h1>
           </a>
+
           <nav class="nav">
             <ul class="nav__list">
-              <li class="nav__item"><a href="#top">Top</a></li>
+              <li class="nav__item"><a href="index.html">Top</a></li>
               <li class="nav__item"><a href="concept.html">Concept</a></li>
               <li class="nav__item"><a href="menu.html">Menu</a></li>
               <li class="nav__item"><a href="#instagram">Instagram</a></li>
+              <li class="nav__item"><a href="#information">Informations</a></li>
             </ul>
           </nav>
+
+          <button class="hamburger" aria-label="Menu">
+            <span class="hamburger__inner">
+              <span class="hamburger__line hamburger__line--top"></span>
+              <span class="hamburger__text">Menu</span>
+              <span class="hamburger__line hamburger__line--bottom"></span>
+            </span>
+          </button>
+
         </div>
+
       </header>
 
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+
+        <button class="menu-close" aria-label="Close Menu">
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="mobile-menu__list">
+
+          <li class="mobile-menu__item">
+            <a href="index.html">Top</a>
+          </li>
+
+          <li class="mobile-menu__item hamburger-concept">
+            <a href="concept.html">Concept</a>
+
+            <div class="hamburger-concept-span">
+              <a href="#">本場の石窯</a>
+              <a href="#">食材へのこだわり</a>
+            </div>
+          </li>
+
+          <li class="mobile-menu__item hamburger-menu">
+            <a href="menu.html">Menu</a>
+
+            <div class="hamburger-menu-span">
+              <a href="menu.html#pizza-menu">ピッツァ</a>
+              <a href="menu.html#lunch-menu">セットメニュー</a>
+              <a href="menu.html#wine-menu">ワイン</a>
+            </div>
+          </li>
+
+          <li class="mobile-menu__item">
+            <a href="#instagram">Instagram</a>
+          </li>
+
+          <li class="mobile-menu__item">
+            <a href="#information">Informations</a>
+          </li>
+
+        </ul>
+
+      </div>
       <!-- /* concept */ -->
       <section class="concept concept__inner">
         <h2 class="concept__title">本場イタリアの薪窯で焼く本格ピッツァ</h2>
@@ -76,136 +135,248 @@
       </section>
 
       <!-- /* menu */ -->
-      <section class="menu menu__inner">
-        <h2 class="menu__title">Menu</h2>
-        <div class="menu__card">
-          <div class="menu__card__item">
-            <img src="./public/assets/pizza-menu.png" alt="pizza-menu" class="pizza-menu">
-            <div class="menu-content">
+      <section class="menu">
+        <h2 class="menu__title menu__title__inner">Menu</h2>
 
-              <h3 class="menu__card__item__title">Pizza</h3>
-              <span>ピザメニュー</span>
+        <section class="menu-slider">
+          <div class="swiper menuSwiper">
 
-              <div class="line"></div>
-              <p>
-                薪窯で一枚ずつ丁寧に焼き上げる、<br>
-                本場ナポリスタイルのピッツァ。<br>
-                香ばしい生地と厳選素材の味をお楽しみください。
-              </p>
-              <strong class="price">￥1,000</strong>
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+
+                <article class="menu-card">
+                  <img src="/assets/menu-slider01.png" alt="">
+                  <div class="menu__card__content">
+                    <div class="menu__card__title">
+                      <h4 class="menu__card__subtitle">Pranzo Classico</h4>
+                      <span>（プランツォ・クラシコ）</span>
+                    </div>
+                    <div class="tags">
+                      <p class="tag tag01"> トマトソース</p>
+                      <p class="tag">モッツァレラ</p>
+                    </div>
+                    <p>
+                      お好きなピッツァ + サラダ + スープ + ドリンク<br>
+                      人気の組み合わせを楽しめるスタンダードセット。
+                    </p>
+                    <p class="price">￥1,200</p>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="menu-card">
+                  <img src="/assets/menu-slider02.png" alt="">
+                  <div class="menu__card__content">
+                    <div class="menu__card__title">
+                      <h4 class="menu__card__subtitle">Morning Pizza</h4>
+                      <span>（プランツォ・クラシコ）</span>
+                    </div>
+                    <div class="tags">
+                      <p class="tag tag01"> トマトソース</p>
+                      <p class="tag">モッツァレラ</p>
+                    </div>
+                    <p>
+                      お好きなピッツァ + サラダ + スープ + ドリンク<br>
+                      人気の組み合わせを楽しめるスタンダードセット。
+                    </p>
+                    <p class="price">￥1,200</p>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="menu-card">
+                  <img src="/assets/menu-slider03.png" alt="">
+                  <div class="menu__card__content">
+                    <div class="menu__card__title">
+                      <h4 class="menu__card__subtitle">Smile Pizza</h4>
+                      <span>（プランツォ・クラシコ）</span>
+                    </div>
+                    <div class="tags">
+                      <p class="tag tag01"> トマトソース</p>
+                      <p class="tag">モッツァレラ</p>
+                    </div>
+                    <p>
+                      お好きなピッツァ + サラダ + スープ + ドリンク<br>
+                      人気の組み合わせを楽しめるスタンダードセット。
+                    </p>
+                    <p class="price">￥1,200</p>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+
+                <article class="menu-card">
+                  <img src="/assets/menu-slider01.png" alt="">
+                  <div class="menu__card__content">
+                    <div class="menu__card__title">
+                      <h4 class="menu__card__subtitle">Simple Pizza</h4>
+                      <span>（プランツォ・クラシコ）</span>
+                    </div>
+                    <div class="tags">
+                      <p class="tag tag01"> トマトソース</p>
+                      <p class="tag">モッツァレラ</p>
+                    </div>
+                    <p>
+                      お好きなピッツァ + サラダ + スープ + ドリンク<br>
+                      人気の組み合わせを楽しめるスタンダードセット。
+                    </p>
+                    <p class="price">￥1,200</p>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="menu-card">
+                  <img src="/assets/menu-slider02.png" alt="">
+                  <div class="menu__card__content">
+                    <div class="menu__card__title">
+                      <h4 class="menu__card__subtitle">Cheese Pizza</h4>
+                      <span>（プランツォ・クラシコ）</span>
+                    </div>
+                    <div class="tags">
+                      <p class="tag tag01"> トマトソース</p>
+                      <p class="tag">モッツァレラ</p>
+                    </div>
+                    <p>
+                      お好きなピッツァ + サラダ + スープ + ドリンク<br>
+                      人気の組み合わせを楽しめるスタンダードセット。
+                    </p>
+                    <p class="price">￥1,200</p>
+                  </div>
+                </article>
+              </div>
+
             </div>
+          </div>
+
+
+        </section>
+        <div class="menu__card menu__card__inner">
+          <div class="menu__card__item">
+            <a href="menu.html#pizza-menu">
+              <img src="./public/assets/pizza-menu.png" alt="pizza-menu" class="pizza-menu">
+              <div class="menu-content">
+                <h3 class="menu__card__item__title">Pizza</h3>
+                <span>ピザメニュー</span>
+                <div class="line"></div>
+                <p>
+                  薪窯で一枚ずつ丁寧に焼き上げる、<br>
+                  本場ナポリスタイルのピッツァ。<br>
+                  香ばしい生地と厳選素材の味をお楽しみください。
+                </p>
+              </div>
+            </a>
           </div>
           <div class="menu__card__item reverse">
-            <img src="./public/assets/side-menu.png" alt="side-menu" class="side-menu">
-            <div class="menu-content">
-
-              <h3 class="menu__card__item__title">Side</h3>
-              <span>サイドメニュー</span>
-
-              <div class="line line__reverse"></div>
-              <p>
-                ピッツァと相性抜群の前菜やサラダをご用意。<br>
-                食卓を彩る一品をお楽しみください。
-              </p>
-              <strong class="price">￥1,000</strong>
-            </div>
+            <a href="menu.html#lunch-menu">
+              <img src="./public/assets/side-menu.png" alt="side-menu" class="side-menu">
+              <div class="menu-content">
+                <h3 class="menu__card__item__title">Lunch</h3>
+                <span>ランチメニュー</span>
+                <div class="line line__reverse"></div>
+                <p>
+                  ピッツァと相性抜群の前菜やサラダをご用意。<br>
+                  食卓を彩る一品をお楽しみください。
+                </p>
+              </div>
+            </a>
           </div>
           <div class="menu__card__item">
-            <img src="./public/assets/drink-menu.png" alt="drink-menu" class="drink-menu">
-            <div class="menu-content">
+            <a href="menu.html#wine-menu">
+              <img src="./public/assets/drink-menu.png" alt="drink-menu" class="drink-menu">
+              <div class="menu-content">
+                <h3 class="menu__card__item__title">Drink</h3>
+                <span>ドリンクメニュー</span>
+                <div class="line"></div>
+                <p>
+                  お料理に合わせて選べるドリンクをご用意。<br>
+                  ソフトドリンクからこだわりのワインまで<br>
+                  幅広く取り揃えています
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
 
-              <h3 class="menu__card__item__title">Drink</h3>
-              <span>ドリンクメニュー</span>
+      </section>
+      <!-- instagram -->
+      <section class="instagram instagram__inner" id="instagram">
+        <h2 class="instagram__title">Instagram</h2>
+        <a href="#instagram" class="insta-tag">公式インスタグラム</a>
+        <div class="instagram__card">
+          <div class="instagram__card__item">
+            <img src="./public/assets/insta-img01.png" alt="instagram-image">
+            <h3 class="instagram__card__item__title">Belo</h3>
+            <p>Belo-pizza-delicious</p>
+          </div>
+          <div class="instagram__card__item">
+            <img src="./public/assets/insta-img01.png" alt="instagram-image">
+            <h3 class="instagram__card__item__title">Belo</h3>
+            <p>Belo-pizza-delicious</p>
+          </div>
+          <div class="instagram__card__item">
+            <img src="./public/assets/insta-img01.png" alt="instagram-image">
+            <h3 class="instagram__card__item__title">Belo</h3>
+            <p>Belo-pizza-delicious</p>
+          </div>
+          <div class="instagram__card__item">
+            <img src="./public/assets/insta-img01.png" alt="instagram-image">
+            <h3 class="instagram__card__item__title">Belo</h3>
+            <p>Belo-pizza-delicious</p>
+          </div>
+        </div>
 
-              <div class="line"></div>
+      </section>
+      <!-- Informations -->
+      <section class="information information__inner" id="information">
+        <h2 class="information__title">
+          Taste That Connects.
+        </h2>
+        <div class="information__card">
+          <div class="information__card__item">
+            <h3 class="information__card__item__title">Pizzaria <span>Belo</span></h3>
+            <address class="information__address">
+              <p>〒460-0011 名古屋市中区大須3-36-44<br>
+                地下鉄上前津駅8番出口より徒歩5分</p>
               <p>
-                お料理に合わせて選べるドリンクをご用意。<br>
-                ソフトドリンクからこだわりのワインまで<br>
-                幅広く取り揃えています
+                営業時間 / ランチタイム：11:30〜14:00（Lo13:30）<br>
+                ディナータイム：16:00〜21:30（21:00）
               </p>
-              <strong class="price">￥1,000</strong>
+              <p>
+                貸し切り飲み放題プラン有り。（15名様〜24名様ほど）<br>
+                電話 or 店頭にて要相談。
+              </p>
+            </address>
+            <a href="https://maps.app.goo.gl/kFveThsanzA5SWJN9" class="map">Google Map</a>
+            <strong>TEL:052-251-0655</strong>
+            <a href="#instagram" class="insta-tag">公式インスタグラム</a>
+          </div>
+          <div class="information__card__item">
+            <img src="./public/assets/information-img.png" alt="information-img" class="information__img">
+            <div class="information__description">
+              <div class="information__desc">
+                <h3 class="information__desc__title">こだわり</h3>
+                <p>食材</p>
+                <p>イタリアンピッツァとは</p>
+                <p>本場の石窯</p>
+              </div>
+              <div class="information__desc">
+                <h3 class="information__desc__title">メニュー</h3>
+                <p>ピッツァ</p>
+                <p>サイド</p>
+                <p>ドリンク</p>
+              </div>
+              <div class="information__desc">
+                <h3 class="information__desc__title">お店について</h3>
+                <p>店舗情報</p>
+                <p>アクセス</p>
+
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    </section>
-    <section class="instagram instagram__inner">
-      <h2 class="instagram__title">Instagram</h2>
-      <a href="#instagram" class="insta-tag">公式インスタグラム</a>
-      <div class="instagram__card">
-        <div class="instagram__card__item">
-          <img src="./public/assets/insta-img01.png" alt="instagram-image">
-          <h3 class="instagram__card__item__title">Belo</h3>
-          <p>Belo-pizza-delicious</p>
-        </div>
-        <div class="instagram__card__item">
-          <img src="./public/assets/insta-img01.png" alt="instagram-image">
-          <h3 class="instagram__card__item__title">Belo</h3>
-          <p>Belo-pizza-delicious</p>
-        </div>
-        <div class="instagram__card__item">
-          <img src="./public/assets/insta-img01.png" alt="instagram-image">
-          <h3 class="instagram__card__item__title">Belo</h3>
-          <p>Belo-pizza-delicious</p>
-        </div>
-        <div class="instagram__card__item">
-          <img src="./public/assets/insta-img01.png" alt="instagram-image">
-          <h3 class="instagram__card__item__title">Belo</h3>
-          <p>Belo-pizza-delicious</p>
-        </div>
-      </div>
 
-    </section>
-    <!-- Informations -->
-    <section class="information information__inner">
-      <h2 class="information__title">
-        Taste That Connects.
-      </h2>
-      <div class="information__card">
-        <div class="information__card__item">
-          <h3 class="information__card__item__title">Pizzaria <span>Belo</span></h3>
-          <address class="information__address">
-            <p>〒460-0011 名古屋市中区大須3-36-44<br>
-              地下鉄上前津駅8番出口より徒歩5分</p>
-            <p>
-              営業時間 / ランチタイム：11:30〜14:00（Lo13:30）<br>
-              ディナータイム：16:00〜21:30（21:00）
-            </p>
-            <p>
-              貸し切り飲み放題プラン有り。（15名様〜24名様ほど）<br>
-              電話 or 店頭にて要相談。
-            </p>
-          </address>
-          <a href="https://maps.app.goo.gl/kFveThsanzA5SWJN9" class="map">Google Map</a>
-          <strong>TEL:052-251-0655</strong>
-          <a href="#instagram" class="insta-tag">公式インスタグラム</a>
         </div>
-        <div class="information__card__item">
-          <img src="./public/assets/information-img.png" alt="information-img" class="information__img">
-          <div class="information__description">
-            <div class="information__desc">
-              <h3 class="information__desc__title">こだわり</h3>
-              <p>食材</p>
-              <p>イタリアンピッツァとは</p>
-              <p>本場の石窯</p>
-            </div>
-            <div class="information__desc">
-              <h3 class="information__desc__title">メニュー</h3>
-              <p>ピッツァ</p>
-              <p>サイド</p>
-              <p>ドリンク</p>
-            </div>
-            <div class="information__desc">
-              <h3 class="information__desc__title">お店について</h3>
-              <p>店舗情報</p>
-              <p>アクセス</p>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+      </section>
     </div>
   </main>
   <footer class="footer footer__inner">
