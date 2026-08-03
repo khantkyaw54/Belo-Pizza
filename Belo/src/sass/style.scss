@@ -581,8 +581,8 @@ img {
 
 //Insatgram
 .instagram {
-    margin-top: rem(100);
-    margin-bottom: rem(100);
+    padding-top: rem(120);
+    padding-bottom: rem(100);
 
     & a {
         display: flex;
@@ -983,8 +983,8 @@ img {
 .menu-pizza {
     &__inner {
         @include inner();
-        margin-top: rem(120);
-        margin-bottom: rem(120);
+        padding-top: rem(120);
+        padding-bottom: rem(120);
     }
 
     &__title {
@@ -1107,8 +1107,8 @@ img {
 .menu-lunch {
     &__inner {
         @include inner();
-        margin-top: rem(120);
-        margin-bottom: rem(120);
+        padding-top: rem(120);
+        padding-bottom: rem(120);
     }
 
     &__title {
@@ -1209,8 +1209,8 @@ img {
 .menu-drink {
     &__inner {
         @include inner();
-        margin-top: rem(120);
-        margin-bottom: rem(120);
+        padding-top: rem(120);
+        padding-bottom: rem(120);
     }
 
     &__title {

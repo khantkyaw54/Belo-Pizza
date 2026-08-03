@@ -701,45 +701,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Instagram Error-----------------//
     // ======================================
-    // Instagram Navigation
-    // ======================================
 
-    // Click Instagram button
-    document.querySelectorAll(".js-instagram").forEach(link => {
-
-        link.addEventListener("click", (e) => {
-
-            e.preventDefault();
-
-            // If already on index page
-            if (
-                window.location.pathname.endsWith("index.html") ||
-                window.location.pathname === "/" ||
-                window.location.pathname === "/index.html"
-            ) {
-
-                const target = document.querySelector("#instagram");
-
-                if (target) {
-
-                    gsap.to(window, {
-                        duration: 1.2,
-                        scrollTo: target,
-                        ease: "power2.inOut"
-                    });
-
-                }
-
-            } else {
-
-                // Go to index page with hash
-                window.location.href = "index.html#instagram";
-
-            }
-
-        });
-
-    });
 
 
     // ======================================
@@ -748,9 +710,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    if (window.location.hash === "#instagram") {
-
-        const target = document.querySelector("#instagram");
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
 
         if (target) {
 
@@ -761,11 +722,9 @@ window.addEventListener("DOMContentLoaded", () => {
                     scrollTo: target,
                     ease: "power2.inOut"
                 });
-
             }, 300);
 
         }
-
     }
 
 });
