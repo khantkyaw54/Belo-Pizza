@@ -3,8 +3,11 @@ import gsap from "gsap";
 import Swiper from "swiper";
 import "swiper/css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
 
 const header = document.querySelector(".header");
 const hero = document.querySelector(".hero");
@@ -163,6 +166,7 @@ tl2
     }, "-=0.7");
 
 //for menu
+
 const menuTl = gsap.timeline({
     scrollTrigger: {
         trigger: ".menu",
@@ -522,20 +526,29 @@ concept04Tl
 // Mobile Menu
 // =========================
 
+// =============================
+// Mobile Hamburger Menu
+// =============================
+
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".mobile-menu");
 const closeBtn = document.querySelector(".menu-close");
 
 if (hamburger && menu && closeBtn) {
 
-    const links = gsap.utils.toArray(".mobile-menu__item");
+    // Animate the list items
+    const menuItems = gsap.utils.toArray(".mobile-menu__item");
 
+    // Every link inside the menu
+    const links = gsap.utils.toArray(".mobile-menu a");
+
+    // Initial state
     gsap.set(menu, {
         xPercent: 100,
         autoAlpha: 0
     });
 
-    gsap.set(links, {
+    gsap.set(menuItems, {
         y: 40,
         opacity: 0
     });
@@ -548,66 +561,211 @@ if (hamburger && menu && closeBtn) {
 
     menuTl
 
+        // Drawer
         .to(menu, {
             xPercent: 0,
             autoAlpha: 1,
-            duration: .7,
+            duration: 0.7,
             ease: "power4.inOut"
         }, 0)
 
+        // Hide Menu text
         .to(".hamburger__text", {
             opacity: 0,
-            duration: .15
+            duration: 0.15
         }, 0)
 
+        // Top line
         .to(".hamburger__line--top", {
             top: "50%",
             y: -1,
             rotate: 45,
-            duration: .35,
+            duration: 0.35,
             ease: "power3.out"
         }, 0)
 
+        // Bottom line
         .to(".hamburger__line--bottom", {
             bottom: "50%",
             y: 1,
             rotate: -45,
-            duration: .35,
+            duration: 0.35,
             ease: "power3.out"
         }, 0)
 
-        .to(links, {
+        // Menu Items
+        .to(menuItems, {
             opacity: 1,
             y: 0,
-            stagger: .08,
-            duration: .45,
+            stagger: 0.08,
+            duration: 0.45,
             ease: "power3.out"
-        }, "-=.2");
+        }, "-=0.2");
+
+
+    // --------------------------
+    // Open Menu
+    // --------------------------
 
     function openMenu() {
+
         menuTl.timeScale(1).play();
+
         document.body.style.overflow = "hidden";
+
+        hamburger.setAttribute("aria-expanded", "true");
+
         isOpen = true;
+
     }
+
+    // --------------------------
+    // Close Menu
+    // --------------------------
 
     function closeMenu() {
+
         menuTl.timeScale(2).reverse();
+
         document.body.style.overflow = "";
+
+        hamburger.setAttribute("aria-expanded", "false");
+
         isOpen = false;
+
     }
 
+    // --------------------------
+    // Hamburger
+    // --------------------------
+
     hamburger.addEventListener("click", () => {
-        isOpen ? closeMenu() : openMenu();
-    });
-    closeBtn.addEventListener("click", closeMenu);
-    links.forEach(link => {
-        link.addEventListener("click", closeMenu);
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+
     });
 
+    // --------------------------
+    // Close Button
+    // --------------------------
+
+    closeBtn.addEventListener("click", closeMenu);
+
+    // --------------------------
+    // Close when clicking links
+    // --------------------------
+
+    links.forEach(link => {
+
+        link.addEventListener("click", (e) => {
+
+            const href = link.getAttribute("href");
+
+            closeMenu();
+
+            // Same-page anchor (#...)
+            if (href.startsWith("#")) {
+                return;
+            }
+
+            // Different page
+            e.preventDefault();
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 250);
+
+        });
+
+    });
+
+    // --------------------------
+    // ESC key
+    // --------------------------
+
     window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
+
+        if (e.key === "Escape" && isOpen) {
+            closeMenu();
+        }
+
     });
 
 }
 
-//hamburger menu
+
+
+// Instagram Error-----------------//
+// ======================================
+// Instagram Navigation
+// ======================================
+
+// Click Instagram button
+document.querySelectorAll(".js-instagram").forEach(link => {
+
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        // If already on index page
+        if (
+            window.location.pathname.endsWith("index.html") ||
+            window.location.pathname === "/" ||
+            window.location.pathname === "/index.html"
+        ) {
+
+            const target = document.querySelector("#instagram");
+
+            if (target) {
+
+                gsap.to(window, {
+                    duration: 1.2,
+                    scrollTo: target,
+                    ease: "power2.inOut"
+                });
+
+            }
+
+        } else {
+
+            // Go to index page with hash
+            window.location.href = "index.html#instagram";
+
+        }
+
+    });
+
+});
+
+
+// ======================================
+// When page loads with #instagram
+// ======================================
+
+window.addEventListener("load", () => {
+
+    if (window.location.hash === "#instagram") {
+
+        const target = document.querySelector("#instagram");
+
+        if (target) {
+
+            setTimeout(() => {
+
+                gsap.to(window, {
+                    duration: 1.2,
+                    scrollTo: target,
+                    ease: "power2.inOut"
+                });
+
+            }, 300);
+
+        }
+
+    }
+
+});
