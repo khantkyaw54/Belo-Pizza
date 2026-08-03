@@ -257,8 +257,8 @@ img {
 
 //CONCEPT
 .concept {
-    margin-top: rem(100);
-    margin-bottom: rem(180);
+    padding-top: rem(140);
+    padding-bottom: rem(120);
 
     &__desc {
         @include mq(desktop) {
@@ -783,8 +783,8 @@ img {
 
 
 .concept02 {
-    margin-top: rem(100);
-    margin-bottom: rem(120);
+    padding-top: rem(150);
+    padding-bottom: rem(120);
 
     &__inner {
         @include inner();
