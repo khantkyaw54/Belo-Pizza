@@ -146,8 +146,8 @@ img {
 .main .hero .tongue {
   width: 9.375rem;
   position: absolute;
-  top: 250px;
-  left: 215px;
+  top: 200px;
+  left: 190px;
   transform: translate(-50%, -50%);
 }
 @media (width >= 740px) {

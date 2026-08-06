@@ -239,8 +239,8 @@ img {
         .tongue {
             width: rem(150);
             position: absolute;
-            top: 250px;
-            left: 215px;
+            top: 200px;
+            left: 190px;
             transform: translate(-50%, -50%);
 
             @include mq("desktop") {
